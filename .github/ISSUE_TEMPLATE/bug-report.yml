@@ -1,0 +1,63 @@
+name: Bug report
+description: Report a reproducible defect in marketplace packages, metadata, schemas, or tooling.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include credentials, personal data, private Command source, or vulnerability details.
+        Security issues must follow SECURITY.md.
+  - type: input
+    id: component
+    attributes:
+      label: Component or package
+      description: Include the package ID and version when applicable.
+    validations:
+      required: true
+  - type: input
+    id: command_version
+    attributes:
+      label: 172X Command version
+      description: Use `Not applicable` for repository-only tooling.
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      description: Operating system and relevant architecture or environment.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Provide the smallest deterministic sequence that demonstrates the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed result
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Sanitized diagnostics
+      description: Remove secrets, private paths, personal data, and unrelated logs.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues for this defect.
+          required: true
+        - label: This report does not disclose a security vulnerability or sensitive data.
+          required: true

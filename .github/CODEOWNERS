@@ -1,0 +1,19 @@
+# Default ownership
+* @zmastylo
+
+# Governance, licensing, security, and provider automation
+/.github/ @zmastylo
+/LICENSE @zmastylo
+/NOTICE @zmastylo
+/TRADEMARKS.md @zmastylo
+/CODE_OF_CONDUCT.md @zmastylo
+/CONTRIBUTING.md @zmastylo
+/SECURITY.md @zmastylo
+/GOVERNANCE.md @zmastylo
+/DCO.md @zmastylo
+
+# Public contracts and catalog authority
+/schemas/ @zmastylo
+/registry/ @zmastylo
+/tooling/ @zmastylo
+/packages/ @zmastylo

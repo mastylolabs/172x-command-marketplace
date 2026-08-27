@@ -1,0 +1,76 @@
+name: Extension proposal
+description: Propose a Theme, Widget, Panel, or Command package before implementation.
+title: "[Extension]: "
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Extension type
+      options:
+        - Theme
+        - Widget
+        - Panel
+        - Command
+    validations:
+      required: true
+  - type: input
+    id: package_id
+    attributes:
+      label: Proposed package ID
+      description: Use a stable namespaced lowercase ID. Final naming remains subject to validation and review.
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Purpose and user outcome
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Visible behavior and states
+      description: Cover success, loading, empty, unavailable, error, recovery, disable, and removal where applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: capabilities
+    attributes:
+      label: Requested capabilities
+      description: Explain why each capability is necessary and what happens when it is denied or unavailable.
+    validations:
+      required: true
+  - type: textarea
+    id: storage_network
+    attributes:
+      label: Storage, network, and external services
+      description: State `None` explicitly when the package needs none.
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility and platforms
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Source, license, assets, and dependency provenance
+    validations:
+      required: true
+  - type: textarea
+    id: accessibility
+    attributes:
+      label: Keyboard and accessibility behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I read the repository boundaries and contribution policy.
+          required: true
+        - label: I understand that acceptance does not grant official 172X status or guarantee publication.
+          required: true

@@ -1,0 +1,53 @@
+name: Feature request
+description: Propose a bounded improvement to the marketplace ecosystem.
+title: "[Feature]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and affected user
+      description: Describe the triggering context and current limitation, not only the proposed solution.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Observable desired outcome
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Theme
+        - Widget
+        - Panel
+        - Command
+        - Registry or catalog
+        - Schema or validator
+        - Contributor tooling
+        - Documentation or governance
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: authority
+    attributes:
+      label: Capabilities and data involved
+      description: Identify any network, storage, project, filesystem, terminal, shell, credential, or user-data needs.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Current alternatives or workaround
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues and proposals.
+          required: true
+        - label: I understand that a proposal is not a promise of implementation or release.
+          required: true
