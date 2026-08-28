@@ -1,0 +1,418 @@
+[
+  {
+    "expect": [],
+    "kind": "package",
+    "name": "valid-catppuccin-theme-package",
+    "path": "packages/org.catppuccin.mocha/1.0.0/manifest.json"
+  },
+  {
+    "expect": [],
+    "kind": "package",
+    "name": "valid-clock-widget-package",
+    "path": "packages/com.mastylolabs.clock/1.0.0/manifest.json"
+  },
+  {
+    "expect": [],
+    "kind": "theme",
+    "name": "valid-theme-payload",
+    "path": "docs/examples/v1/theme.json"
+  },
+  {
+    "expect": [],
+    "kind": "widget",
+    "name": "valid-widget-payload",
+    "path": "docs/examples/v1/widget.json"
+  },
+  {
+    "expect": [],
+    "kind": "panel",
+    "name": "valid-panel-payload",
+    "path": "docs/examples/v1/panel.json"
+  },
+  {
+    "expect": ["JSON_INVALID"],
+    "kind": "manifest",
+    "name": "malformed-json",
+    "path": "fixtures/invalid/malformed.json"
+  },
+  {
+    "base": "packages/org.catppuccin.mocha/1.0.0/manifest.json",
+    "documentKind": "manifest",
+    "expect": ["SCHEMA_UNKNOWN_FIELD"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/unknownField", "value": true }
+    ],
+    "name": "manifest-unknown-field"
+  },
+  {
+    "base": "packages/org.catppuccin.mocha/1.0.0/manifest.json",
+    "documentKind": "manifest",
+    "expect": ["CONTRACT_MAJOR_UNSUPPORTED", "SCHEMA_INVALID"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/schemaVersion", "value": 2 }
+    ],
+    "name": "manifest-unknown-major"
+  },
+  {
+    "base": "packages/org.catppuccin.mocha/1.0.0/manifest.json",
+    "documentKind": "manifest",
+    "expect": ["SCHEMA_INVALID", "TYPE_UNSUPPORTED"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/package/type", "value": "skin" }
+    ],
+    "name": "manifest-skin-type-rejected"
+  },
+  {
+    "base": "packages/org.catppuccin.mocha/1.0.0/manifest.json",
+    "documentKind": "manifest",
+    "expect": ["SCHEMA_INVALID", "TYPE_UNSUPPORTED"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/package/type", "value": "command" }
+    ],
+    "name": "manifest-command-type-rejected"
+  },
+  {
+    "base": "packages/org.catppuccin.mocha/1.0.0/manifest.json",
+    "documentKind": "manifest",
+    "expect": ["SCHEMA_INVALID", "TYPE_UNSUPPORTED"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/package/type", "value": "future-type" }
+    ],
+    "name": "manifest-unknown-type-rejected"
+  },
+  {
+    "base": "packages/org.catppuccin.mocha/1.0.0/manifest.json",
+    "documentKind": "manifest",
+    "expect": ["DELIVERY_UNSUPPORTED", "SCHEMA_INVALID"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/package/deliveryMode", "value": "downloaded-executable" }
+    ],
+    "name": "manifest-executable-delivery-rejected"
+  },
+  {
+    "base": "packages/org.catppuccin.mocha/1.0.0/manifest.json",
+    "documentKind": "manifest",
+    "expect": ["TYPE_DELIVERY_MISMATCH"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/package/deliveryMode", "value": "host-bundled-source" }
+    ],
+    "name": "manifest-type-delivery-mismatch"
+  },
+  {
+    "base": "packages/org.catppuccin.mocha/1.0.0/manifest.json",
+    "documentKind": "manifest",
+    "expect": ["SCHEMA_INVALID", "SEMVER_INVALID"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/package/version", "value": "v1" }
+    ],
+    "name": "manifest-semver-invalid"
+  },
+  {
+    "base": "packages/org.catppuccin.mocha/1.0.0/manifest.json",
+    "documentKind": "manifest",
+    "expect": ["SCHEMA_INVALID", "SEMVER_RANGE_INVALID"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/compatibility/commandHostRange", "value": "*" }
+    ],
+    "name": "manifest-range-invalid"
+  },
+  {
+    "base": "packages/org.catppuccin.mocha/1.0.0/manifest.json",
+    "documentKind": "manifest",
+    "expect": ["INCOMPATIBLE_HOST"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/compatibility/commandHostRange", "value": ">=2.0.0 <3.0.0" }
+    ],
+    "name": "manifest-incompatible-host"
+  },
+  {
+    "base": "packages/org.catppuccin.mocha/1.0.0/manifest.json",
+    "documentKind": "manifest",
+    "expect": ["INCOMPATIBLE_EXTENSION_API"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/compatibility/extensionApiRange", "value": ">=2.0.0 <3.0.0" }
+    ],
+    "name": "manifest-incompatible-api"
+  },
+  {
+    "base": "packages/org.catppuccin.mocha/1.0.0/manifest.json",
+    "documentKind": "manifest",
+    "expect": ["PATH_TRAVERSAL", "SCHEMA_INVALID"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/source/repositoryUri", "value": "../outside.json" }
+    ],
+    "name": "manifest-traversal-reference"
+  },
+  {
+    "base": "packages/org.catppuccin.mocha/1.0.0/manifest.json",
+    "documentKind": "manifest",
+    "expect": ["PATH_ABSOLUTE", "SCHEMA_INVALID"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/source/repositoryUri", "value": "/absolute/path" }
+    ],
+    "name": "manifest-absolute-reference"
+  },
+  {
+    "base": "packages/org.catppuccin.mocha/1.0.0/manifest.json",
+    "documentKind": "manifest",
+    "expect": ["SCHEMA_INVALID", "URI_UNSAFE"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/source/repositoryUri", "value": "javascript:alert" }
+    ],
+    "name": "manifest-scriptable-reference"
+  },
+  {
+    "base": "docs/examples/v1/theme.json",
+    "documentKind": "theme",
+    "expect": ["SCHEMA_UNKNOWN_FIELD", "THEME_ACTIVE_CONTENT"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/css", "value": "body {}" }
+    ],
+    "name": "theme-raw-css-rejected"
+  },
+  {
+    "base": "docs/examples/v1/theme.json",
+    "documentKind": "theme",
+    "expect": ["SCHEMA_INVALID", "THEME_ACTIVE_CONTENT"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/tokens/accent", "value": "url(https://example.invalid/a)" }
+    ],
+    "name": "theme-external-active-value-rejected"
+  },
+  {
+    "base": "docs/examples/v1/theme.json",
+    "documentKind": "theme",
+    "expect": ["SCHEMA_INVALID"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "delete", "pointer": "/tokens/focus" }
+    ],
+    "name": "theme-required-token-missing"
+  },
+  {
+    "base": "docs/examples/v1/widget.json",
+    "documentKind": "widget",
+    "expect": ["SCHEMA_INVALID", "WIDGET_RUNTIME_DOWNLOAD"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/runtimeDownload", "value": true }
+    ],
+    "name": "widget-runtime-download-rejected"
+  },
+  {
+    "base": "docs/examples/v1/widget.json",
+    "documentKind": "widget",
+    "expect": ["SCHEMA_INVALID", "WIDGET_RUNTIME_DOWNLOAD"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/runtimeLoading", "value": "dynamic-import" }
+    ],
+    "name": "widget-dynamic-loading-rejected"
+  },
+  {
+    "base": "docs/examples/v1/widget.json",
+    "documentKind": "widget",
+    "expect": ["PATH_ABSOLUTE", "SCHEMA_INVALID"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/sourceAssociation/sourceUri", "value": "/tmp/widget.tsx" }
+    ],
+    "name": "widget-absolute-source-rejected"
+  },
+  {
+    "base": "docs/examples/v1/panel.json",
+    "documentKind": "panel",
+    "expect": ["PANEL_EXECUTABLE_CONTENT", "SCHEMA_UNKNOWN_FIELD"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/controller", "value": "run" }
+    ],
+    "name": "panel-controller-rejected"
+  },
+  {
+    "base": "docs/examples/v1/panel.json",
+    "documentKind": "panel",
+    "expect": ["PANEL_AUTOMATIC_PLACEMENT", "SCHEMA_INVALID"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/automaticPlacement", "value": true }
+    ],
+    "name": "panel-automatic-placement-rejected"
+  },
+  {
+    "base": "docs/examples/v1/panel.json",
+    "documentKind": "panel",
+    "expect": ["SEMVER_RANGE_INVALID"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/slots/0/acceptedWidget/apiRange", "value": ">=2.0.0 <1.0.0" }
+    ],
+    "name": "panel-inverted-widget-api-range-rejected"
+  },
+  {
+    "base": "docs/examples/v1/panel.json",
+    "documentKind": "panel",
+    "expect": ["SEMVER_RANGE_INVALID"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/slots/0/acceptedWidget/apiRange", "value": ">=1.0.0 <1.0.0" }
+    ],
+    "name": "panel-empty-widget-api-range-rejected"
+  },
+  {
+    "base": "docs/examples/v1/panel.json",
+    "documentKind": "panel",
+    "expect": ["SCHEMA_INVALID", "SEMVER_RANGE_INVALID"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/slots/0/acceptedWidget/apiRange", "value": "*" }
+    ],
+    "name": "panel-malformed-widget-api-range-rejected"
+  },
+  {
+    "base": "docs/examples/v1/panel.json",
+    "documentKind": "panel",
+    "expect": ["DUPLICATE_SLOT"],
+    "kind": "mutation",
+    "mutations": [
+      {
+        "op": "append",
+        "pointer": "/slots",
+        "value": {
+          "acceptedWidget": { "apiRange": ">=1.0.0 <2.0.0", "typeContractMajor": 1 },
+          "behaviorHints": ["fixed"],
+          "conflicts": [],
+          "id": "primary",
+          "occupancy": { "maximum": 1, "minimum": 0, "overflow": "reject" },
+          "role": "sidebar-primary",
+          "size": { "maxHeight": 12, "maxWidth": 6, "minHeight": 1, "minWidth": 2 }
+        }
+      }
+    ],
+    "name": "panel-duplicate-slot-rejected"
+  },
+  {
+    "expect": ["LIMIT_EXCEEDED"],
+    "kind": "oversized-json",
+    "name": "oversized-json-rejected",
+    "path": "synthetic"
+  },
+  {
+    "expect": ["DIGEST_MISMATCH", "JSON_INVALID", "SIZE_MISMATCH"],
+    "kind": "package-alter-payload",
+    "name": "altered-theme-payload-rejected",
+    "path": "packages/org.catppuccin.mocha/1.0.0/manifest.json",
+    "payload": "packages/org.catppuccin.mocha/1.0.0/theme.json"
+  },
+  {
+    "appendContent": "\nfetch('https://example.invalid')",
+    "expect": ["DIGEST_MISMATCH", "SIZE_MISMATCH", "WIDGET_SOURCE_PROHIBITED"],
+    "kind": "package-alter-payload",
+    "name": "widget-dynamic-network-source-rejected",
+    "path": "packages/com.mastylolabs.clock/1.0.0/manifest.json",
+    "payload": "packages/com.mastylolabs.clock/1.0.0/src/ClockWidget.tsx"
+  },
+  {
+    "expect": ["CATALOG_MIXED_REVISION"],
+    "indexMutations": [
+      { "op": "set", "pointer": "/entries/0/revision", "value": "mixed-revision" }
+    ],
+    "kind": "snapshot-mutation",
+    "name": "catalog-mixed-entry-revision-rejected",
+    "revocationMutations": []
+  },
+  {
+    "expect": [
+      "CATALOG_MIXED_REVISION",
+      "CATALOG_REVOCATION_DIGEST_MISMATCH",
+      "REVOCATION_INCOHERENT"
+    ],
+    "indexMutations": [],
+    "kind": "snapshot-mutation",
+    "name": "catalog-mixed-revocation-set-rejected",
+    "revocationMutations": [
+      { "op": "set", "pointer": "/revision", "value": "mixed-revision" }
+    ]
+  },
+  {
+    "expect": ["CATALOG_REVOCATION_DIGEST_MISMATCH"],
+    "indexMutations": [
+      { "op": "set", "pointer": "/revocationsSha256", "value": "0000000000000000000000000000000000000000000000000000000000000000" }
+    ],
+    "kind": "snapshot-mutation",
+    "name": "catalog-revocation-digest-rejected",
+    "revocationMutations": []
+  },
+  {
+    "expect": ["CATALOG_MANIFEST_DIGEST_MISMATCH"],
+    "indexMutations": [
+      { "op": "set", "pointer": "/entries/0/manifestSha256", "value": "0000000000000000000000000000000000000000000000000000000000000000" }
+    ],
+    "kind": "snapshot-mutation",
+    "name": "catalog-manifest-digest-rejected",
+    "revocationMutations": []
+  },
+  {
+    "expect": ["DUPLICATE_PACKAGE", "SCHEMA_INVALID"],
+    "indexMutations": [
+      { "index": 0, "op": "append-copy", "pointer": "/entries" }
+    ],
+    "kind": "snapshot-mutation",
+    "name": "catalog-duplicate-entry-rejected",
+    "revocationMutations": []
+  },
+  {
+    "expect": ["CATALOG_ENTRY_INCOHERENT"],
+    "indexMutations": [
+      { "op": "set", "pointer": "/entries/0/packageId", "value": "org.example.changed" }
+    ],
+    "kind": "snapshot-mutation",
+    "name": "catalog-entry-identity-rejected",
+    "revocationMutations": []
+  },
+  {
+    "expect": ["JSON_DUPLICATE_KEY"],
+    "kind": "manifest",
+    "name": "duplicate-json-member-rejected",
+    "path": "fixtures/invalid/duplicate-manifest.json"
+  },
+  {
+    "base": "packages/com.mastylolabs.clock/1.0.0/manifest.json",
+    "documentKind": "manifest",
+    "expect": ["SCHEMA_INVALID"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/trust/authorEvidence", "value": "mastylo-maintained" },
+      { "op": "set", "pointer": "/trust/provenance", "value": "build-correlated" },
+      { "op": "set", "pointer": "/trust/review", "value": "independently-reviewed" },
+      { "op": "set", "pointer": "/trust/security", "value": "scoped-review-complete" }
+    ],
+    "name": "package-elevated-trust-claims-rejected"
+  },
+  {
+    "base": "packages/com.mastylolabs.clock/1.0.0/manifest.json",
+    "documentKind": "manifest",
+    "expect": ["PLAIN_TEXT_UNSAFE"],
+    "kind": "mutation",
+    "mutations": [
+      { "op": "set", "pointer": "/package/name", "value": "&lt;img src=x onerror=run()&gt;" }
+    ],
+    "name": "encoded-active-display-text-rejected"
+  }
+]

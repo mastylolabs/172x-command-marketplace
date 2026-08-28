@@ -1,0 +1,53 @@
+{
+  "$id": "urn:172x:marketplace:schema:v1:revocations",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "releaseState": { "const": "private" },
+    "revision": { "$ref": "#/$defs/revision" },
+    "revocations": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "effectiveRevision": { "$ref": "#/$defs/revision" },
+          "guidanceUri": { "$ref": "#/$defs/reference" },
+          "packageId": { "$ref": "#/$defs/packageId" },
+          "packageVersion": { "$ref": "#/$defs/semver" },
+          "reasonCode": {
+            "enum": ["SECURITY", "INTEGRITY", "LEGAL", "COMPATIBILITY", "PROVENANCE", "POLICY"]
+          },
+          "state": { "enum": ["suspended", "revoked", "delisted"] }
+        },
+        "required": ["effectiveRevision", "packageId", "packageVersion", "reasonCode", "state"],
+        "type": "object"
+      },
+      "maxItems": 1024,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "schemaVersion": { "const": 1 }
+  },
+  "required": ["releaseState", "revision", "revocations", "schemaVersion"],
+  "type": "object",
+  "$defs": {
+    "packageId": {
+      "maxLength": 96,
+      "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+){2,}$",
+      "type": "string"
+    },
+    "reference": {
+      "maxLength": 240,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._/-]*$",
+      "type": "string"
+    },
+    "revision": {
+      "maxLength": 64,
+      "pattern": "^[a-z0-9][a-z0-9.-]*$",
+      "type": "string"
+    },
+    "semver": {
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+      "type": "string"
+    }
+  }
+}

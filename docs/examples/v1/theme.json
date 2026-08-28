@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "appearance": "dark",
+    "attribution": "Contract example using original example values.",
+    "name": "Example Dark"
+  },
+  "packageId": "org.example.dark-theme",
+  "packageVersion": "1.0.0",
+  "schemaVersion": 1,
+  "tokens": {
+    "accent": "#8fb8ff",
+    "background": "#10141a",
+    "border": "#3c4654",
+    "danger": "#ff8f9b",
+    "focus": "#b2c8ff",
+    "info": "#8fb8ff",
+    "selection": "#40526b",
+    "success": "#8fd4a8",
+    "surface": "#161c24",
+    "surfaceElevated": "#202a36",
+    "syntaxComment": "#738092",
+    "syntaxKeyword": "#c3a8ff",
+    "syntaxNumber": "#ffc38f",
+    "syntaxString": "#8fd4a8",
+    "terminalBackground": "#0b0f14",
+    "terminalForeground": "#e6edf7",
+    "textMuted": "#8995a6",
+    "textPrimary": "#e6edf7",
+    "textSecondary": "#b8c2d0",
+    "warning": "#f6d58f"
+  },
+  "type": "theme"
+}

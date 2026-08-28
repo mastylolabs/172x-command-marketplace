@@ -1,0 +1,242 @@
+{
+  "$id": "urn:172x:marketplace:schema:v1:manifest",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "capabilities": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "dataCategory": { "enum": ["none", "public-display", "non-secret-preference"] },
+          "id": { "maxLength": 64, "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)+$", "type": "string" },
+          "purpose": { "minLength": 1, "maxLength": 160, "type": "string" },
+          "required": { "type": "boolean" },
+          "scope": { "enum": ["host-provided", "package-namespace"] }
+        },
+        "required": ["dataCategory", "id", "purpose", "required", "scope"],
+        "type": "object"
+      },
+      "maxItems": 8,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "compatibility": {
+      "additionalProperties": false,
+      "properties": {
+        "commandHostRange": { "$ref": "#/$defs/range" },
+        "conflicts": { "items": { "$ref": "#/$defs/packageId" }, "maxItems": 16, "type": "array", "uniqueItems": true },
+        "dependencies": { "items": { "$ref": "#/$defs/packageId" }, "maxItems": 16, "type": "array", "uniqueItems": true },
+        "extensionApiRange": { "$ref": "#/$defs/range" },
+        "platforms": {
+          "items": { "enum": ["platform-neutral", "host-build-defined"] },
+          "maxItems": 2,
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "typeContractMajor": { "const": 1 }
+      },
+      "required": [
+        "commandHostRange",
+        "conflicts",
+        "dependencies",
+        "extensionApiRange",
+        "platforms",
+        "typeContractMajor"
+      ],
+      "type": "object"
+    },
+    "contract": {
+      "additionalProperties": false,
+      "properties": {
+        "artifactId": { "const": "172X-MKT-MANIFEST-001" },
+        "version": { "const": "v1" }
+      },
+      "required": ["artifactId", "version"],
+      "type": "object"
+    },
+    "developerDocs": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "contractVersion": { "const": "v1" },
+          "sha256": { "$ref": "#/$defs/sha256" },
+          "topic": { "minLength": 1, "maxLength": 80, "type": "string" },
+          "uri": { "$ref": "#/$defs/reference" }
+        },
+        "required": ["contractVersion", "sha256", "topic", "uri"],
+        "type": "object"
+      },
+      "maxItems": 8,
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "license": {
+      "additionalProperties": false,
+      "properties": {
+        "file": { "$ref": "#/$defs/fileBinding" },
+        "spdx": { "minLength": 1, "maxLength": 64, "pattern": "^[A-Za-z0-9.+-]+$", "type": "string" },
+        "thirdPartyNotices": {
+          "items": { "$ref": "#/$defs/fileBinding" },
+          "maxItems": 8,
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": ["file", "spdx", "thirdPartyNotices"],
+      "type": "object"
+    },
+    "lifecycle": {
+      "additionalProperties": false,
+      "properties": {
+        "dataRetention": { "enum": ["not-applicable", "host-owned-preserve-until-explicit-purge"] },
+        "rollback": { "enum": ["host-owned-last-valid", "host-build-rollback-only"] },
+        "state": { "enum": ["draft", "accepted-unpublished"] }
+      },
+      "required": ["dataRetention", "rollback", "state"],
+      "type": "object"
+    },
+    "package": {
+      "additionalProperties": false,
+      "properties": {
+        "deliveryMode": { "enum": ["declarative-data", "host-bundled-source"] },
+        "description": { "minLength": 1, "maxLength": 500, "type": "string" },
+        "id": { "$ref": "#/$defs/packageId" },
+        "name": { "minLength": 1, "maxLength": 80, "type": "string" },
+        "summary": { "minLength": 1, "maxLength": 160, "type": "string" },
+        "type": { "enum": ["theme", "widget", "panel"] },
+        "version": { "$ref": "#/$defs/semver" }
+      },
+      "required": ["deliveryMode", "description", "id", "name", "summary", "type", "version"],
+      "type": "object"
+    },
+    "payloads": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "mediaType": { "enum": ["application/json", "text/markdown", "text/plain", "text/typescript"] },
+          "role": {
+            "enum": ["theme-data", "widget-data", "widget-source", "panel-data", "license", "notice", "documentation"]
+          },
+          "sha256": { "$ref": "#/$defs/sha256" },
+          "size": { "maximum": 1048576, "minimum": 0, "type": "integer" },
+          "uri": { "$ref": "#/$defs/reference" }
+        },
+        "required": ["mediaType", "role", "sha256", "size", "uri"],
+        "type": "object"
+      },
+      "maxItems": 16,
+      "minItems": 3,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "schemaVersion": { "const": 1 },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "authors": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "evidence": { "const": "declared" },
+              "name": { "minLength": 1, "maxLength": 100, "type": "string" },
+              "role": { "enum": ["package-author", "maintainer", "upstream-palette-author"] }
+            },
+            "required": ["evidence", "name", "role"],
+            "type": "object"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "type": "array"
+        },
+        "repositoryUri": { "$ref": "#/$defs/reference" },
+        "revision": { "minLength": 1, "maxLength": 64, "pattern": "^[A-Za-z0-9._-]+$", "type": "string" },
+        "upstream": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "attribution": { "minLength": 1, "maxLength": 300, "type": "string" },
+              "licenseSpdx": { "minLength": 1, "maxLength": 64, "type": "string" },
+              "project": { "minLength": 1, "maxLength": 100, "type": "string" },
+              "repositoryIdentity": { "minLength": 1, "maxLength": 120, "type": "string" },
+              "revision": { "minLength": 1, "maxLength": 64, "pattern": "^[A-Za-z0-9._-]+$", "type": "string" }
+            },
+            "required": ["attribution", "licenseSpdx", "project", "repositoryIdentity", "revision"],
+            "type": "object"
+          },
+          "maxItems": 8,
+          "type": "array"
+        }
+      },
+      "required": ["authors", "repositoryUri", "revision", "upstream"],
+      "type": "object"
+    },
+    "trust": {
+      "additionalProperties": false,
+      "properties": {
+        "authorEvidence": { "const": "declared" },
+        "maintenance": { "enum": ["limited", "unmaintained", "unknown"] },
+        "official": { "const": false },
+        "provenance": { "enum": ["digest-recorded", "source-correlated"] },
+        "review": { "const": "unreviewed" },
+        "security": { "enum": ["not-reviewed", "open-finding"] },
+        "sourceAvailability": { "enum": ["linked", "immutable-revision-linked"] }
+      },
+      "required": [
+        "authorEvidence",
+        "maintenance",
+        "official",
+        "provenance",
+        "review",
+        "security",
+        "sourceAvailability"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "capabilities",
+    "compatibility",
+    "contract",
+    "developerDocs",
+    "license",
+    "lifecycle",
+    "package",
+    "payloads",
+    "schemaVersion",
+    "source",
+    "trust"
+  ],
+  "type": "object",
+  "$defs": {
+    "fileBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "uri": { "$ref": "#/$defs/reference" }
+      },
+      "required": ["sha256", "uri"],
+      "type": "object"
+    },
+    "packageId": {
+      "maxLength": 96,
+      "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+){2,}$",
+      "type": "string"
+    },
+    "range": {
+      "pattern": "^>=(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*) <(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+      "type": "string"
+    },
+    "reference": {
+      "maxLength": 240,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._/-]*$",
+      "type": "string"
+    },
+    "semver": {
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+      "type": "string"
+    },
+    "sha256": { "pattern": "^[0-9a-f]{64}$", "type": "string" }
+  }
+}

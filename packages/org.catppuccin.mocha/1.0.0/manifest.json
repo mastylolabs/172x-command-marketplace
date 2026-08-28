@@ -1,0 +1,117 @@
+{
+  "capabilities": [],
+  "compatibility": {
+    "commandHostRange": ">=0.1.0 <1.0.0",
+    "conflicts": [],
+    "dependencies": [],
+    "extensionApiRange": ">=1.0.0 <2.0.0",
+    "platforms": [
+      "platform-neutral"
+    ],
+    "typeContractMajor": 1
+  },
+  "contract": {
+    "artifactId": "172X-MKT-MANIFEST-001",
+    "version": "v1"
+  },
+  "developerDocs": [
+    {
+      "contractVersion": "v1",
+      "sha256": "36c580c0b2fbe601fa1bfa63b77ef9ea6cd1a20be48eadcdd11b42e699158f60",
+      "topic": "Catppuccin Mocha private representative",
+      "uri": "packages/org.catppuccin.mocha/1.0.0/README.md"
+    }
+  ],
+  "license": {
+    "file": {
+      "sha256": "814096d2c34cc216c624738a49356f32b7237733b4f7edb0685f4e50ef5074ba",
+      "uri": "packages/org.catppuccin.mocha/1.0.0/LICENSE"
+    },
+    "spdx": "MIT",
+    "thirdPartyNotices": [
+      {
+        "sha256": "13183dea5635ce74513fa62b51bffab6a6ad5118fa8ad39418e2cc0fe9d2fdb8",
+        "uri": "packages/org.catppuccin.mocha/1.0.0/NOTICE.md"
+      }
+    ]
+  },
+  "lifecycle": {
+    "dataRetention": "not-applicable",
+    "rollback": "host-owned-last-valid",
+    "state": "accepted-unpublished"
+  },
+  "package": {
+    "deliveryMode": "declarative-data",
+    "description": "A private inert Theme adaptation of the Catppuccin Mocha palette for v1 contract validation.",
+    "id": "org.catppuccin.mocha",
+    "name": "Catppuccin Mocha",
+    "summary": "Private declarative Catppuccin Mocha Theme representative.",
+    "type": "theme",
+    "version": "1.0.0"
+  },
+  "payloads": [
+    {
+      "mediaType": "application/json",
+      "role": "theme-data",
+      "sha256": "08d407d082fd7ef1de1fa806bfe569973d59dcc480fc6606ff15efbcd515b7f9",
+      "size": 931,
+      "uri": "packages/org.catppuccin.mocha/1.0.0/theme.json"
+    },
+    {
+      "mediaType": "text/plain",
+      "role": "license",
+      "sha256": "814096d2c34cc216c624738a49356f32b7237733b4f7edb0685f4e50ef5074ba",
+      "size": 1067,
+      "uri": "packages/org.catppuccin.mocha/1.0.0/LICENSE"
+    },
+    {
+      "mediaType": "text/markdown",
+      "role": "notice",
+      "sha256": "13183dea5635ce74513fa62b51bffab6a6ad5118fa8ad39418e2cc0fe9d2fdb8",
+      "size": 718,
+      "uri": "packages/org.catppuccin.mocha/1.0.0/NOTICE.md"
+    },
+    {
+      "mediaType": "text/markdown",
+      "role": "documentation",
+      "sha256": "36c580c0b2fbe601fa1bfa63b77ef9ea6cd1a20be48eadcdd11b42e699158f60",
+      "size": 667,
+      "uri": "packages/org.catppuccin.mocha/1.0.0/README.md"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "authors": [
+      {
+        "evidence": "declared",
+        "name": "172X Marketplace contributors",
+        "role": "package-author"
+      },
+      {
+        "evidence": "declared",
+        "name": "Catppuccin",
+        "role": "upstream-palette-author"
+      }
+    ],
+    "repositoryUri": "packages/org.catppuccin.mocha/1.0.0/README.md",
+    "revision": "172X-W1-PRIVATE-CONTRACTS-v0.1",
+    "upstream": [
+      {
+        "attribution": "Color values derive from Catppuccin Mocha palette 1.8.0; 172X claims no authorship or ownership of Catppuccin palette or marks.",
+        "licenseSpdx": "MIT",
+        "project": "Catppuccin Palette",
+        "repositoryIdentity": "github:catppuccin/palette",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd"
+      }
+    ]
+  },
+  "trust": {
+    "authorEvidence": "declared",
+    "maintenance": "limited",
+    "official": false,
+    "provenance": "source-correlated",
+    "review": "unreviewed",
+    "security": "not-reviewed",
+    "sourceAvailability": "immutable-revision-linked"
+  }
+}

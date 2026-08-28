@@ -1,22 +1,28 @@
 # 172X Command Marketplace
 
-Open extensions, widgets, panels, themes, and marketplace registry for 172X Command.
+Private contracts, validation tooling, representative packages, and static catalog source for the
+planned 172X Command extension ecosystem.
 
-> **Status:** Private pre-release foundation. This repository does not yet publish an installable
-> marketplace, supported extension SDK, or public package catalog.
+> **Status:** Private Wave 1 contract release. Strict v1 contracts, local tooling, fixtures,
+> developer docs, and two representative packages exist locally. This repository does not publish
+> an installable marketplace, supported extension SDK, public package catalog, public developer
+> documentation, or Command host integration.
 
 ## Purpose
 
-This repository is the planned home of the open 172X Command extension ecosystem. It will define
-the public package contracts, validation tooling, examples, registry metadata, and contribution
-process used by compatible 172X Extensions.
+This repository is the canonical owner of the planned marketplace package contracts, validation
+tooling, examples, static registry metadata, and developer documentation. The current artifacts are
+private implementation evidence only, not a public or supported release.
 
-Planned extension types are:
+The v1 technical taxonomy is:
 
-- **Themes** — declarative semantic appearance packages.
-- **Widgets** — bounded cards that can be added to compatible Panels.
-- **Panels** — right-side workspaces or declared arrangements of compatible Widgets.
-- **Commands** — Command Palette entries backed only by approved host actions.
+- **Extension** — ecosystem umbrella.
+- **Theme** — inert semantic appearance data using `declarative-data`; **Skin** is only a
+  one-to-one user-facing synonym and never a manifest type.
+- **Widget** — reviewed source using `host-bundled-source`; runtime code is available only when
+  compiled into an exact compatible Command build and is never downloaded from marketplace bytes.
+- **Panel** — inert host-owned layout/slot descriptors using `declarative-data`.
+- **Command** — deferred and unsupported by v1, along with every executable delivery mode.
 
 ## Boundaries
 
@@ -29,24 +35,42 @@ downloadable executable plugin runtime is not available and must not be inferred
 repository. Downloaded code will not be executed in the main Command renderer merely because it is
 submitted as an extension.
 
-## Initial milestone
+## Private Wave 1 contents
 
-Before this repository becomes public, the project intends to establish:
+The current coherent local release contains:
 
-1. a versioned extension manifest and compatibility contract;
-2. deterministic package validation and CI;
-3. one original declarative Theme package;
-4. one small deterministic Widget package;
-5. contribution, security, review, deprecation, and takedown policies;
-6. end-to-end installation or activation tests through 172X Command;
-7. clear Official, Curated Community, Community, Experimental, and Incompatible labels.
+1. strict catalog, revocations, manifest, Theme, Widget, and Panel v1 schemas;
+2. a deterministic validator and atomic static catalog builder with stable reason codes;
+3. valid/invalid fixtures for schema, semantics, integrity, compatibility, duplicates, unsafe
+   references/content, coherence, and implementation bounds;
+4. one declarative Catppuccin Mocha Theme with explicit upstream/MIT attribution;
+5. one Clock Widget review-source package with truthful `host-bundled-source`/not-bundled state;
+6. Panel contracts and fixtures, but no Panel package or placement implementation;
+7. versioned MkDocs developer docs plus local/CI synchronization and link checks; and
+8. a source-controlled CI workflow that runs the same complete local gate without secrets.
+
+No host integration, package install/enable/apply/place runtime, service, account, database,
+payment, telemetry, provider configuration, public URL, or executable package path is included.
+
+## Local validation
+
+Python 3.14 and [uv](https://docs.astral.sh/uv/) are used through the repository lockfile:
+
+```sh
+uv sync --locked --all-groups --no-install-project
+PYTHONPATH=src uv run --no-sync python scripts/gate.py
+```
+
+Focused commands and stable failure behavior are documented in the private
+[v1 validation reference](docs/contracts/v1/validation.md). A local pass is implementation evidence,
+not independent QA/security review, PR approval, public support, publication, or release.
 
 ## Contribution status
 
 External contributions are not open yet. The repository now records its contribution, conduct,
 security, support, governance, DCO, and review policies so they can be tested before publication.
-Package templates and local validation commands will be added with the first approved extension
-contract. See [CONTRIBUTING.md](CONTRIBUTING.md) before preparing a submission.
+External submissions remain closed. See [CONTRIBUTING.md](CONTRIBUTING.md) for the private current
+state and preserved future contribution policy.
 
 Community and governance documents:
 

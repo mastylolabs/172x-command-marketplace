@@ -1,5 +1,5 @@
 name: Extension proposal
-description: Propose a Theme, Widget, Panel, or Command package before implementation.
+description: Propose a Theme, host-bundled Widget source, or declarative Panel before implementation.
 title: "[Extension]: "
 body:
   - type: dropdown
@@ -10,7 +10,6 @@ body:
         - Theme
         - Widget
         - Panel
-        - Command
     validations:
       required: true
   - type: input
