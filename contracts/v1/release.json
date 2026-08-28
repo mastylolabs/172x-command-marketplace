@@ -1,0 +1,22 @@
+{
+  "artifactId": "172X-MKT-CONTRACTS-001",
+  "date": "2026-08-27",
+  "developerDocs": {
+    "contractVersion": "v1",
+    "publicationState": "private-local-ci-only",
+    "uri": "docs/contracts/v1/index.md"
+  },
+  "reasonCodes": "contracts/v1/reason-codes.json",
+  "schemas": {
+    "catalog": "schemas/v1/catalog.schema.json",
+    "manifest": "schemas/v1/manifest.schema.json",
+    "panel": "schemas/v1/panel.schema.json",
+    "revocations": "schemas/v1/revocations.schema.json",
+    "theme": "schemas/v1/theme.schema.json",
+    "widget": "schemas/v1/widget.schema.json"
+  },
+  "sourceIdentity": "172X-W1-PRIVATE-CONTRACTS-v0.1",
+  "state": "private",
+  "validatorVersion": "0.1.0",
+  "version": "v1"
+}

@@ -25,11 +25,14 @@ private user data, or active abuse report.
 Once public submissions open, contributions may include:
 
 - declarative Themes;
-- Widgets supported by the published extension contract;
+- Widget source compatible with the host-bundled contract; marketplace bytes are never runtime-loaded;
 - declarative Panels and compatible Widget arrangements;
-- approved Command Palette extensions;
 - schemas, validators, examples, documentation, and tests;
 - fixes to marketplace metadata and contributor tooling.
+
+Command packages and executable delivery modes are deferred and unsupported by v1. Any later type
+requires a separately versioned contract and the product, architecture, UX, security, review, and
+human gates named by the project.
 
 Native binaries, unrestricted shell actions, credential providers, arbitrary project/filesystem
 access, hidden network behavior, and downloaded code intended for the main 172X Command renderer
@@ -65,12 +68,21 @@ assets, telemetry without an approved contract, or code/content you do not have 
 
 ## Development and validation
 
-The authoritative local commands will be added with the first approved package schema and
-validator. Until then, no undocumented command or generated artifact is required for contribution.
+The private Wave 1 toolchain is Python 3.14 plus repository-local, locked uv dependencies:
 
-After tooling exists, the same validations required in pull-request CI must be available locally
-and documented here. CI must fail closed for malformed, duplicate, incompatible, prohibited, or
-unlicensed package content.
+```sh
+uv sync --locked --all-groups --no-install-project
+PYTHONPATH=src uv run --no-sync python scripts/gate.py
+```
+
+The complete command validates schemas, fixture expectations, both private representative
+packages, generated catalog synchronization, documentation/examples/links, pytest, and MkDocs
+strict mode. Focused commands and implementation bounds are documented under
+`docs/contracts/v1/`. CI uses the same complete command and no secrets.
+
+CI and local tooling fail closed for malformed, duplicate, incompatible, oversized, altered,
+unsafe, unknown, incoherent, prohibited, or insufficiently attributed package content. Passing
+automation does not self-approve, accept, publish, classify as Official, or support a package.
 
 ## Commits and DCO sign-off
 

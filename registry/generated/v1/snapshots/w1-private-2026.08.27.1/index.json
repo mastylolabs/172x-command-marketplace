@@ -1,0 +1,93 @@
+{
+  "catalogFormat": 1,
+  "entries": [
+    {
+      "classification": "community",
+      "deliveryMode": "declarative-data",
+      "displayName": "Catppuccin Mocha",
+      "manifestSha256": "0447eaf89445a4e18074e35f1345ca5011f56eade6d44d11ed0b334de9366651",
+      "manifestUri": "packages/org.catppuccin.mocha/1.0.0/manifest.json",
+      "maturity": "experimental",
+      "packageId": "org.catppuccin.mocha",
+      "packageVersion": "1.0.0",
+      "publication": "accepted-unpublished",
+      "revision": "w1-private-2026.08.27.1",
+      "type": "theme"
+    },
+    {
+      "classification": "community",
+      "deliveryMode": "host-bundled-source",
+      "displayName": "Clock Widget",
+      "manifestSha256": "401a734b95aefbd8a24e1eb102f0c0c173a1491e14d8df003d22f060ac31f035",
+      "manifestUri": "packages/com.mastylolabs.clock/1.0.0/manifest.json",
+      "maturity": "experimental",
+      "packageId": "com.mastylolabs.clock",
+      "packageVersion": "1.0.0",
+      "publication": "accepted-unpublished",
+      "revision": "w1-private-2026.08.27.1",
+      "type": "widget"
+    }
+  ],
+  "generatedFrom": {
+    "architecture": {
+      "artifactId": "DA-W0-ARCH-001",
+      "sha256": "4d0d3ab71850ce2466554403c180f9030d035261cba857eb0762cf990a6723ab",
+      "version": "v0.1"
+    },
+    "buildGate": {
+      "artifactId": "172X-GATE-CMD-W1-001",
+      "sha256": "53995489c5cbc25adde4e3e32a9635de65d96f7564b355fefdb20b4f7b3bc567",
+      "version": "v0.1"
+    },
+    "contractRelease": {
+      "sha256": "25bef4aa6510b6829076e980850a7afec823d0a22fc6e917b8ee17e6bb6151d9",
+      "uri": "contracts/v1/release.json"
+    },
+    "developerDocs": {
+      "contractVersion": "v1",
+      "publicationState": "private-local-ci-only",
+      "source": {
+        "sha256": "83953b3503b38a9a7b9b282414ccf91a3a27fd3ce52e9611982659dc231f59b6",
+        "uri": "docs/contracts/v1/index.md"
+      }
+    },
+    "schemas": {
+      "catalog": {
+        "sha256": "ee74883e32754fd5096e40ce563997843f14460b07cb6bda510dcc09c0bfe52b",
+        "uri": "schemas/v1/catalog.schema.json"
+      },
+      "manifest": {
+        "sha256": "95176b63c81e14eac4b5533fa83d7ab5e1a884eebf1d79b68cc74811ed70bb0d",
+        "uri": "schemas/v1/manifest.schema.json"
+      },
+      "panel": {
+        "sha256": "a5f6b8c61b625592da60ed40bd9784f5f2caf7f0794618f9889b6cd2bc74ac94",
+        "uri": "schemas/v1/panel.schema.json"
+      },
+      "revocations": {
+        "sha256": "88538fdfefcd67b3a24fe87840bc2622eca45e9e18e645b4c5956b8963d25768",
+        "uri": "schemas/v1/revocations.schema.json"
+      },
+      "theme": {
+        "sha256": "5cac182a719b2fde763d5551f1ace482093a491d3f09cb95415680f0a01d78da",
+        "uri": "schemas/v1/theme.schema.json"
+      },
+      "widget": {
+        "sha256": "b9008441bb5c0a6d54705777ed455b4a3d68fa1841d3ec27bc35c0f999a517c6",
+        "uri": "schemas/v1/widget.schema.json"
+      }
+    },
+    "source": {
+      "sha256": "aa292b7d8f94b345f6242ef768efb2f876086a16fb074bc308465dd32e0212e4",
+      "uri": "registry/source/v1/release.json"
+    },
+    "sourceIdentity": "172X-W1-PRIVATE-CONTRACTS-v0.1",
+    "validatorVersion": "0.1.0"
+  },
+  "releaseState": "private",
+  "revision": "w1-private-2026.08.27.1",
+  "revocationsSha256": "bb840dc7fcad6df498f9ef8b7c533e3d0c7047e8eeaddbb02139d165a5b93f6e",
+  "revocationsUri": "catalog/v1/revocations.json",
+  "schemaVersion": 1,
+  "sort": "display-name-casefold,package-id,package-version"
+}

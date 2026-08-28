@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+.venv/
 .pnpm-store/
 .yarn/cache/
 .yarn/install-state.gz
@@ -7,6 +8,8 @@ node_modules/
 # Build and generated output
 dist/
 build/
+.build/
+site/
 out/
 .output/
 .cache/
@@ -16,6 +19,9 @@ out/
 
 # Tests and coverage
 coverage/
+.pytest_cache/
+__pycache__/
+*.py[cod]
 playwright-report/
 test-results/
 blob-report/
@@ -24,6 +30,7 @@ blob-report/
 .wrangler/
 
 # Local configuration and secrets
+.private/
 .env
 .env.*
 !.env.example

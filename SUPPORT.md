@@ -1,7 +1,8 @@
 # Support
 
-172X Command Marketplace is currently private and pre-release. Public package installation,
-compatibility, and contributor support are not available yet.
+172X Command Marketplace is currently private and pre-release. Private Wave 1 contracts and local
+tooling exist, but public package installation, runtime compatibility, provider-hosted developer
+documentation, and contributor support are not available.
 
 ## When public support opens
 

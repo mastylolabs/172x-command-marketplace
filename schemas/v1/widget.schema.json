@@ -1,0 +1,87 @@
+{
+  "$id": "urn:172x:marketplace:schema:v1:widget",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "availability": { "const": "requires-compatible-command-build" },
+    "buildAssociation": {
+      "additionalProperties": false,
+      "properties": {
+        "inventoryIdentity": { "maxLength": 140, "pattern": "^[a-z0-9.@-]+$", "type": "string" },
+        "mode": { "const": "exact-host-build-inventory" },
+        "state": { "enum": ["not-bundled", "bundled-in-exact-build"] }
+      },
+      "required": ["inventoryIdentity", "mode", "state"],
+      "type": "object"
+    },
+    "dataInputs": {
+      "items": { "enum": ["host-provided-clock-instant"] },
+      "maxItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "deliveryMode": { "const": "host-bundled-source" },
+    "packageId": { "$ref": "#/$defs/packageId" },
+    "packageVersion": { "$ref": "#/$defs/semver" },
+    "placement": {
+      "additionalProperties": false,
+      "properties": {
+        "preferredRoles": {
+          "items": { "enum": ["sidebar-primary", "sidebar-secondary", "workspace-utility"] },
+          "maxItems": 3,
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "size": {
+          "additionalProperties": false,
+          "properties": {
+            "maxHeight": { "maximum": 12, "minimum": 1, "type": "integer" },
+            "maxWidth": { "maximum": 12, "minimum": 1, "type": "integer" },
+            "minHeight": { "maximum": 12, "minimum": 1, "type": "integer" },
+            "minWidth": { "maximum": 12, "minimum": 1, "type": "integer" }
+          },
+          "required": ["maxHeight", "maxWidth", "minHeight", "minWidth"],
+          "type": "object"
+        }
+      },
+      "required": ["preferredRoles", "size"],
+      "type": "object"
+    },
+    "runtimeDownload": { "const": false },
+    "runtimeLoading": { "const": "prohibited" },
+    "schemaVersion": { "const": 1 },
+    "sourceAssociation": {
+      "additionalProperties": false,
+      "properties": {
+        "sourceRevision": { "minLength": 1, "maxLength": 64, "pattern": "^[A-Za-z0-9._-]+$", "type": "string" },
+        "sourceSha256": { "$ref": "#/$defs/sha256" },
+        "sourceUri": { "$ref": "#/$defs/reference" }
+      },
+      "required": ["sourceRevision", "sourceSha256", "sourceUri"],
+      "type": "object"
+    },
+    "type": { "const": "widget" }
+  },
+  "required": [
+    "availability",
+    "buildAssociation",
+    "dataInputs",
+    "deliveryMode",
+    "packageId",
+    "packageVersion",
+    "placement",
+    "runtimeDownload",
+    "runtimeLoading",
+    "schemaVersion",
+    "sourceAssociation",
+    "type"
+  ],
+  "type": "object",
+  "$defs": {
+    "packageId": { "maxLength": 96, "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+){2,}$", "type": "string" },
+    "reference": { "maxLength": 240, "pattern": "^[A-Za-z0-9][A-Za-z0-9._/-]*$", "type": "string" },
+    "semver": { "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$", "type": "string" },
+    "sha256": { "pattern": "^[0-9a-f]{64}$", "type": "string" }
+  }
+}

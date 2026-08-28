@@ -23,7 +23,7 @@ body:
         - Theme
         - Widget
         - Panel
-        - Command
+        - Later package type (new contract and gates required)
         - Registry or catalog
         - Schema or validator
         - Contributor tooling

@@ -1,0 +1,99 @@
+{
+  "capabilities": [],
+  "compatibility": {
+    "commandHostRange": ">=0.1.0 <1.0.0",
+    "conflicts": [],
+    "dependencies": [],
+    "extensionApiRange": ">=1.0.0 <2.0.0",
+    "platforms": [
+      "host-build-defined"
+    ],
+    "typeContractMajor": 1
+  },
+  "contract": {
+    "artifactId": "172X-MKT-MANIFEST-001",
+    "version": "v1"
+  },
+  "developerDocs": [
+    {
+      "contractVersion": "v1",
+      "sha256": "6f29f7e1161acaf13a0c55c5bf2a1fad5528df283c73d90d618b923658e2bda8",
+      "topic": "Clock Widget private representative source",
+      "uri": "packages/com.mastylolabs.clock/1.0.0/README.md"
+    }
+  ],
+  "license": {
+    "file": {
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "uri": "LICENSE"
+    },
+    "spdx": "Apache-2.0",
+    "thirdPartyNotices": []
+  },
+  "lifecycle": {
+    "dataRetention": "host-owned-preserve-until-explicit-purge",
+    "rollback": "host-build-rollback-only",
+    "state": "accepted-unpublished"
+  },
+  "package": {
+    "deliveryMode": "host-bundled-source",
+    "description": "Private review source for a Clock Widget that can run only when compiled into an exact compatible Command build.",
+    "id": "com.mastylolabs.clock",
+    "name": "Clock Widget",
+    "summary": "Private host-bundled Clock Widget source representative.",
+    "type": "widget",
+    "version": "1.0.0"
+  },
+  "payloads": [
+    {
+      "mediaType": "application/json",
+      "role": "widget-data",
+      "sha256": "ce8446a13c476ef776c711b39828098e8ebb81b9a9175ba98a08b8607d2dc84b",
+      "size": 942,
+      "uri": "packages/com.mastylolabs.clock/1.0.0/widget.json"
+    },
+    {
+      "mediaType": "text/typescript",
+      "role": "widget-source",
+      "sha256": "64e7d13a1dc396f467922d6b4f3a0a7f98c9600c98a148e3177b367224b30707",
+      "size": 486,
+      "uri": "packages/com.mastylolabs.clock/1.0.0/src/ClockWidget.tsx"
+    },
+    {
+      "mediaType": "text/markdown",
+      "role": "documentation",
+      "sha256": "6f29f7e1161acaf13a0c55c5bf2a1fad5528df283c73d90d618b923658e2bda8",
+      "size": 1212,
+      "uri": "packages/com.mastylolabs.clock/1.0.0/README.md"
+    },
+    {
+      "mediaType": "text/plain",
+      "role": "license",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "size": 11357,
+      "uri": "LICENSE"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "authors": [
+      {
+        "evidence": "declared",
+        "name": "172X Marketplace contributors",
+        "role": "package-author"
+      }
+    ],
+    "repositoryUri": "packages/com.mastylolabs.clock/1.0.0/README.md",
+    "revision": "172X-W1-PRIVATE-CONTRACTS-v0.1",
+    "upstream": []
+  },
+  "trust": {
+    "authorEvidence": "declared",
+    "maintenance": "limited",
+    "official": false,
+    "provenance": "digest-recorded",
+    "review": "unreviewed",
+    "security": "not-reviewed",
+    "sourceAvailability": "linked"
+  }
+}

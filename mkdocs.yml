@@ -1,0 +1,25 @@
+site_name: 172X Command Marketplace Developer Contracts
+site_description: Private Wave 1 developer-contract documentation for 172X Command Marketplace
+docs_dir: docs
+exclude_docs: |
+  README.md
+  architecture/**
+  validation/**
+strict: true
+use_directory_urls: true
+nav:
+  - Private Wave 1: index.md
+  - Contracts v1:
+      - Release identity: contracts/v1/index.md
+      - Catalog and revocations: contracts/v1/catalog.md
+      - Manifest: contracts/v1/manifest.md
+      - Theme: contracts/v1/theme.md
+      - Widget: contracts/v1/widget.md
+      - Panel: contracts/v1/panel.md
+      - Validation and builder: contracts/v1/validation.md
+      - Reason codes: contracts/v1/reason-codes.md
+      - Lifecycle and trust: contracts/v1/lifecycle-and-trust.md
+      - Implementation bounds: contracts/v1/limits.md
+      - Package authoring: contracts/v1/package-authoring.md
+theme:
+  name: mkdocs

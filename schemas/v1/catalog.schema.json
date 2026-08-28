@@ -1,0 +1,149 @@
+{
+  "$id": "urn:172x:marketplace:schema:v1:catalog",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "catalogFormat": { "const": 1 },
+    "entries": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "classification": { "enum": ["official", "curated-community", "community"] },
+          "deliveryMode": { "enum": ["declarative-data", "host-bundled-source"] },
+          "displayName": { "minLength": 1, "maxLength": 80, "type": "string" },
+          "manifestSha256": { "$ref": "#/$defs/sha256" },
+          "manifestUri": { "$ref": "#/$defs/reference" },
+          "maturity": { "enum": ["standard", "experimental"] },
+          "packageId": { "$ref": "#/$defs/packageId" },
+          "packageVersion": { "$ref": "#/$defs/semver" },
+          "publication": {
+            "enum": ["accepted-unpublished", "published", "deprecated", "suspended", "revoked", "delisted"]
+          },
+          "revision": { "$ref": "#/$defs/revision" },
+          "type": { "enum": ["theme", "widget", "panel"] }
+        },
+        "required": [
+          "classification",
+          "deliveryMode",
+          "displayName",
+          "manifestSha256",
+          "manifestUri",
+          "maturity",
+          "packageId",
+          "packageVersion",
+          "publication",
+          "revision",
+          "type"
+        ],
+        "type": "object"
+      },
+      "maxItems": 512,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "generatedFrom": {
+      "additionalProperties": false,
+      "properties": {
+        "architecture": { "$ref": "#/$defs/artifactBinding" },
+        "buildGate": { "$ref": "#/$defs/artifactBinding" },
+        "contractRelease": { "$ref": "#/$defs/fileBinding" },
+        "developerDocs": {
+          "additionalProperties": false,
+          "properties": {
+            "contractVersion": { "const": "v1" },
+            "publicationState": { "const": "private-local-ci-only" },
+            "source": { "$ref": "#/$defs/fileBinding" }
+          },
+          "required": ["contractVersion", "publicationState", "source"],
+          "type": "object"
+        },
+        "schemas": {
+          "additionalProperties": false,
+          "properties": {
+            "catalog": { "$ref": "#/$defs/fileBinding" },
+            "manifest": { "$ref": "#/$defs/fileBinding" },
+            "panel": { "$ref": "#/$defs/fileBinding" },
+            "revocations": { "$ref": "#/$defs/fileBinding" },
+            "theme": { "$ref": "#/$defs/fileBinding" },
+            "widget": { "$ref": "#/$defs/fileBinding" }
+          },
+          "required": ["catalog", "manifest", "panel", "revocations", "theme", "widget"],
+          "type": "object"
+        },
+        "source": { "$ref": "#/$defs/fileBinding" },
+        "sourceIdentity": { "const": "172X-W1-PRIVATE-CONTRACTS-v0.1" },
+        "validatorVersion": { "const": "0.1.0" }
+      },
+      "required": [
+        "architecture",
+        "buildGate",
+        "contractRelease",
+        "developerDocs",
+        "schemas",
+        "source",
+        "sourceIdentity",
+        "validatorVersion"
+      ],
+      "type": "object"
+    },
+    "releaseState": { "const": "private" },
+    "revision": { "$ref": "#/$defs/revision" },
+    "revocationsSha256": { "$ref": "#/$defs/sha256" },
+    "revocationsUri": { "const": "catalog/v1/revocations.json" },
+    "schemaVersion": { "const": 1 },
+    "sort": { "const": "display-name-casefold,package-id,package-version" }
+  },
+  "required": [
+    "catalogFormat",
+    "entries",
+    "generatedFrom",
+    "releaseState",
+    "revision",
+    "revocationsSha256",
+    "revocationsUri",
+    "schemaVersion",
+    "sort"
+  ],
+  "type": "object",
+  "$defs": {
+    "artifactBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "artifactId": { "minLength": 1, "maxLength": 64, "type": "string" },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "version": { "pattern": "^v[0-9]+(?:\\.[0-9]+)?$", "type": "string" }
+      },
+      "required": ["artifactId", "sha256", "version"],
+      "type": "object"
+    },
+    "fileBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "uri": { "$ref": "#/$defs/reference" }
+      },
+      "required": ["sha256", "uri"],
+      "type": "object"
+    },
+    "packageId": {
+      "maxLength": 96,
+      "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+){2,}$",
+      "type": "string"
+    },
+    "reference": {
+      "maxLength": 240,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._/-]*$",
+      "type": "string"
+    },
+    "revision": {
+      "maxLength": 64,
+      "pattern": "^[a-z0-9][a-z0-9.-]*$",
+      "type": "string"
+    },
+    "semver": {
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+      "type": "string"
+    },
+    "sha256": { "pattern": "^[0-9a-f]{64}$", "type": "string" }
+  }
+}

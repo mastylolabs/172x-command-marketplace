@@ -1,0 +1,34 @@
+{
+  "architecture": {
+    "artifactId": "DA-W0-ARCH-001",
+    "sha256": "4d0d3ab71850ce2466554403c180f9030d035261cba857eb0762cf990a6723ab",
+    "uri": "docs/architecture/172x-command-marketplace-and-integration-architecture-v0.1.md",
+    "version": "v0.1"
+  },
+  "buildGate": {
+    "artifactId": "172X-GATE-CMD-W1-001",
+    "sha256": "53995489c5cbc25adde4e3e32a9635de65d96f7564b355fefdb20b4f7b3bc567",
+    "version": "v0.1"
+  },
+  "contractReleaseUri": "contracts/v1/release.json",
+  "developerDocsUri": "docs/contracts/v1/index.md",
+  "packages": [
+    {
+      "classification": "community",
+      "manifestUri": "packages/com.mastylolabs.clock/1.0.0/manifest.json",
+      "maturity": "experimental",
+      "publication": "accepted-unpublished"
+    },
+    {
+      "classification": "community",
+      "manifestUri": "packages/org.catppuccin.mocha/1.0.0/manifest.json",
+      "maturity": "experimental",
+      "publication": "accepted-unpublished"
+    }
+  ],
+  "releaseState": "private",
+  "revision": "w1-private-2026.08.27.1",
+  "revocations": [],
+  "schemaVersion": 1,
+  "sourceIdentity": "172X-W1-PRIVATE-CONTRACTS-v0.1"
+}

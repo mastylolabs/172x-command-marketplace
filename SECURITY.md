@@ -2,8 +2,10 @@
 
 ## Current support state
 
-172X Command Marketplace is a private pre-release repository. It has no public package catalog,
-supported extension SDK, downloadable executable runtime, or supported public release.
+172X Command Marketplace is a private pre-release repository. It has strict private Wave 1
+contracts, local validation/build tooling, fixtures, and two representative source packages. It
+has no public package catalog, supported extension SDK, Command host integration, downloadable
+executable runtime, or supported public release.
 
 | Release | Security support |
 | --- | --- |

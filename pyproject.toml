@@ -1,0 +1,24 @@
+[project]
+name = "172x-command-marketplace-contracts"
+version = "0.1.0"
+description = "Private Wave 1 contracts, validation, and static catalog tooling for 172X Command Marketplace"
+readme = "README.md"
+requires-python = ">=3.12,<3.15"
+license = { file = "LICENSE" }
+dependencies = [
+  "jsonschema==4.25.1",
+]
+
+[dependency-groups]
+dev = [
+  "mkdocs==1.6.1",
+  "pytest==8.4.2",
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.uv]
+package = false

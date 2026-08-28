@@ -1,0 +1,34 @@
+{
+  "automaticPlacement": false,
+  "layoutRole": "right-sidebar",
+  "packageId": "org.example.utility-panel",
+  "packageVersion": "1.0.0",
+  "schemaVersion": 1,
+  "slots": [
+    {
+      "acceptedWidget": {
+        "apiRange": ">=1.0.0 <2.0.0",
+        "typeContractMajor": 1
+      },
+      "behaviorHints": [
+        "resizable",
+        "collapsible"
+      ],
+      "conflicts": [],
+      "id": "primary",
+      "occupancy": {
+        "maximum": 1,
+        "minimum": 0,
+        "overflow": "reject"
+      },
+      "role": "sidebar-primary",
+      "size": {
+        "maxHeight": 12,
+        "maxWidth": 6,
+        "minHeight": 1,
+        "minWidth": 2
+      }
+    }
+  ],
+  "type": "panel"
+}
