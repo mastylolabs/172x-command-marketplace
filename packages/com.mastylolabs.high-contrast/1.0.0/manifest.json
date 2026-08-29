@@ -1,0 +1,92 @@
+{
+  "capabilities": [],
+  "compatibility": {
+    "commandHostRange": ">=0.1.0 <1.0.0",
+    "conflicts": [],
+    "dependencies": [],
+    "extensionApiRange": ">=1.0.0 <2.0.0",
+    "platforms": [
+      "platform-neutral"
+    ],
+    "typeContractMajor": 1
+  },
+  "contract": {
+    "artifactId": "172X-MKT-MANIFEST-001",
+    "version": "v1"
+  },
+  "developerDocs": [
+    {
+      "contractVersion": "v1",
+      "sha256": "ebc56c0ff6be407c325fa3033e7ccec541fae567e82cb7329196433d65069f87",
+      "topic": "172X High Contrast private starter",
+      "uri": "packages/com.mastylolabs.high-contrast/1.0.0/README.md"
+    }
+  ],
+  "license": {
+    "file": {
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "uri": "LICENSE"
+    },
+    "spdx": "Apache-2.0",
+    "thirdPartyNotices": []
+  },
+  "lifecycle": {
+    "dataRetention": "not-applicable",
+    "rollback": "host-owned-last-valid",
+    "state": "accepted-unpublished"
+  },
+  "package": {
+    "deliveryMode": "declarative-data",
+    "description": "Private declarative Theme starter with inert bounded color tokens.",
+    "id": "com.mastylolabs.high-contrast",
+    "name": "172X High Contrast",
+    "summary": "Private 172X High Contrast theme starter.",
+    "type": "theme",
+    "version": "1.0.0"
+  },
+  "payloads": [
+    {
+      "mediaType": "application/json",
+      "role": "theme-data",
+      "sha256": "7a4a362032326705dbf33dad7f4c6d0b3a0931e82cc9f82b8f7d2ea5add08a80",
+      "size": 882,
+      "uri": "packages/com.mastylolabs.high-contrast/1.0.0/theme.json"
+    },
+    {
+      "mediaType": "text/markdown",
+      "role": "documentation",
+      "sha256": "ebc56c0ff6be407c325fa3033e7ccec541fae567e82cb7329196433d65069f87",
+      "size": 240,
+      "uri": "packages/com.mastylolabs.high-contrast/1.0.0/README.md"
+    },
+    {
+      "mediaType": "text/plain",
+      "role": "license",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "size": 11357,
+      "uri": "LICENSE"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "authors": [
+      {
+        "evidence": "declared",
+        "name": "Mastylo Labs LLC",
+        "role": "package-author"
+      }
+    ],
+    "repositoryUri": "packages/com.mastylolabs.high-contrast/1.0.0/README.md",
+    "revision": "private-scaffold-v1",
+    "upstream": []
+  },
+  "trust": {
+    "authorEvidence": "declared",
+    "maintenance": "limited",
+    "official": false,
+    "provenance": "digest-recorded",
+    "review": "unreviewed",
+    "security": "not-reviewed",
+    "sourceAvailability": "linked"
+  }
+}

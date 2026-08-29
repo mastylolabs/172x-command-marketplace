@@ -36,7 +36,7 @@ This Code of Conduct applies within all community spaces, and also applies when 
 
 ## Enforcement
 
-While this repository is private, instances of abusive, harassing, or otherwise unacceptable behavior must be reported privately to the project owner, [@zmastylo](https://github.com/zmastylo), through an established collaborator channel. Do not disclose conduct reports in a public issue. Before public contributions open, Mastylo Labs LLC will publish and verify a monitored private reporting method in this file. All complaints will be reviewed and investigated promptly and fairly.
+Instances of abusive, harassing, or otherwise unacceptable behavior must be reported privately to [support@172x.ai](mailto:support@172x.ai). Do not disclose conduct reports in a public issue. Reports will be reviewed by Mastylo Labs LLC; mailbox monitoring must be verified before a supported community release is announced.
 
 All community leaders are obligated to respect the privacy and security of the reporter of any incident.
 
@@ -81,5 +81,4 @@ For answers to common questions about this code of conduct, see the FAQ at [http
 [Mozilla CoC]: https://github.com/mozilla/diversity
 [FAQ]: https://www.contributor-covenant.org/faq
 [translations]: https://www.contributor-covenant.org/translations
-
 

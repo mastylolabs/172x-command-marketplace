@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "appearance": "light",
+    "attribution": "Adapted from the Catppuccin Latte palette; Catppuccin palette authorship and marks remain with their respective owners.",
+    "name": "Catppuccin Latte"
+  },
+  "packageId": "org.catppuccin.latte",
+  "packageVersion": "1.0.0",
+  "schemaVersion": 1,
+  "tokens": {
+    "accent": "#8839ef",
+    "background": "#eff1f5",
+    "border": "#acb0be",
+    "danger": "#d20f39",
+    "focus": "#7287fd",
+    "info": "#1e66f5",
+    "selection": "#bcc0cc",
+    "success": "#40a02b",
+    "surface": "#e6e9ef",
+    "surfaceElevated": "#ccd0da",
+    "syntaxComment": "#9ca0b0",
+    "syntaxKeyword": "#8839ef",
+    "syntaxNumber": "#fe640b",
+    "syntaxString": "#40a02b",
+    "terminalBackground": "#dce0e8",
+    "terminalForeground": "#4c4f69",
+    "textMuted": "#8c8fa1",
+    "textPrimary": "#4c4f69",
+    "textSecondary": "#5c5f77",
+    "warning": "#df8e1d"
+  },
+  "type": "theme"
+}

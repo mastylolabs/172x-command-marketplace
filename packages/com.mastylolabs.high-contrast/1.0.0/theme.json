@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "appearance": "dark",
+    "attribution": "Original private starter palette authored for this package.",
+    "name": "172X High Contrast"
+  },
+  "packageId": "com.mastylolabs.high-contrast",
+  "packageVersion": "1.0.0",
+  "schemaVersion": 1,
+  "tokens": {
+    "accent": "#00ffff",
+    "background": "#000000",
+    "border": "#ffffff",
+    "danger": "#ff4d4d",
+    "focus": "#ffff00",
+    "info": "#66ccff",
+    "selection": "#444444",
+    "success": "#00ff66",
+    "surface": "#050505",
+    "surfaceElevated": "#101010",
+    "syntaxComment": "#c7c7c7",
+    "syntaxKeyword": "#ff66ff",
+    "syntaxNumber": "#ffff00",
+    "syntaxString": "#00ff66",
+    "terminalBackground": "#000000",
+    "terminalForeground": "#ffffff",
+    "textMuted": "#c7c7c7",
+    "textPrimary": "#ffffff",
+    "textSecondary": "#eeeeee",
+    "warning": "#ffff00"
+  },
+  "type": "theme"
+}

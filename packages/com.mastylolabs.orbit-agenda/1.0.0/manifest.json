@@ -1,0 +1,99 @@
+{
+  "capabilities": [],
+  "compatibility": {
+    "commandHostRange": ">=0.1.0 <1.0.0",
+    "conflicts": [],
+    "dependencies": [],
+    "extensionApiRange": ">=1.0.0 <2.0.0",
+    "platforms": [
+      "host-build-defined"
+    ],
+    "typeContractMajor": 1
+  },
+  "contract": {
+    "artifactId": "172X-MKT-MANIFEST-001",
+    "version": "v1"
+  },
+  "developerDocs": [
+    {
+      "contractVersion": "v1",
+      "sha256": "6e6b49d4d66bab536ceb2f3fabfddbcb9bfe81cc39bc6d9c5b66f6740d011159",
+      "topic": "Orbit Agenda private starter",
+      "uri": "packages/com.mastylolabs.orbit-agenda/1.0.0/README.md"
+    }
+  ],
+  "license": {
+    "file": {
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "uri": "LICENSE"
+    },
+    "spdx": "Apache-2.0",
+    "thirdPartyNotices": []
+  },
+  "lifecycle": {
+    "dataRetention": "host-owned-preserve-until-explicit-purge",
+    "rollback": "host-build-rollback-only",
+    "state": "accepted-unpublished"
+  },
+  "package": {
+    "deliveryMode": "host-bundled-source",
+    "description": "Private review source for a Widget that must be compiled into an exact compatible Command build.",
+    "id": "com.mastylolabs.orbit-agenda",
+    "name": "Orbit Agenda",
+    "summary": "Private Orbit Agenda widget starter.",
+    "type": "widget",
+    "version": "1.0.0"
+  },
+  "payloads": [
+    {
+      "mediaType": "application/json",
+      "role": "widget-data",
+      "sha256": "591039f3b16531dd4f91effba2a7e5e5157fad2f2354c7184d6929b58f7c5687",
+      "size": 882,
+      "uri": "packages/com.mastylolabs.orbit-agenda/1.0.0/widget.json"
+    },
+    {
+      "mediaType": "text/typescript",
+      "role": "widget-source",
+      "sha256": "a871cf7ad99d95a4bb433c06667ae3cdc7b5d060a0a84ee5f6a8f9bca1e6d2bd",
+      "size": 193,
+      "uri": "packages/com.mastylolabs.orbit-agenda/1.0.0/src/Widget.ts"
+    },
+    {
+      "mediaType": "text/markdown",
+      "role": "documentation",
+      "sha256": "6e6b49d4d66bab536ceb2f3fabfddbcb9bfe81cc39bc6d9c5b66f6740d011159",
+      "size": 234,
+      "uri": "packages/com.mastylolabs.orbit-agenda/1.0.0/README.md"
+    },
+    {
+      "mediaType": "text/plain",
+      "role": "license",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "size": 11357,
+      "uri": "LICENSE"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "authors": [
+      {
+        "evidence": "declared",
+        "name": "Mastylo Labs LLC",
+        "role": "package-author"
+      }
+    ],
+    "repositoryUri": "packages/com.mastylolabs.orbit-agenda/1.0.0/README.md",
+    "revision": "private-scaffold-v1",
+    "upstream": []
+  },
+  "trust": {
+    "authorEvidence": "declared",
+    "maintenance": "limited",
+    "official": false,
+    "provenance": "digest-recorded",
+    "review": "unreviewed",
+    "security": "not-reviewed",
+    "sourceAvailability": "linked"
+  }
+}

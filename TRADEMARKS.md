@@ -54,7 +54,7 @@ marketplace may require renaming or revised presentation when confusion is reaso
 
 ## Questions and permission requests
 
-Before public contributions open, Mastylo Labs LLC will publish a verified trademark-contact method.
-Until then, invited collaborators should contact repository owner
-[@zmastylo](https://github.com/zmastylo) privately through an established collaborator channel.
+Questions and permission requests may be sent to
+[support@172x.ai](mailto:support@172x.ai). Mailbox monitoring must be verified before a supported
+community release is announced.
 No permission is granted by a lack of response.

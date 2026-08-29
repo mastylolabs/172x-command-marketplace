@@ -1,7 +1,7 @@
 # Lifecycle, trust, and non-guarantees
 
-Wave 1 packages are private source artifacts in `accepted-unpublished` state. They are not public,
-installed, enabled, active, placed, supported, released, or provider-hosted.
+Wave 1 packages are publicly visible source artifacts in `accepted-unpublished` state. They are not
+in a public installable catalog, enabled, active, placed, supported, released, or provider-hosted.
 
 Trust is a vector. Source availability, author evidence, package license, provenance/integrity,
 review, classification, maturity, maintenance, compatibility, requested capabilities, lifecycle,
@@ -10,7 +10,7 @@ digest, compilation, or review is not a safety guarantee or an endorsement.
 
 No self-approval is permitted. Package data can declare source/authorship/license/capability facts,
 but `official` is fixed false and package trust values are restricted to least-claiming states in
-private manifests. Package bytes cannot assert Mastylo maintenance, active maintenance, build
+proposal manifests. Package bytes cannot assert Mastylo maintenance, active maintenance, build
 correlation, automation/independent review, or completed security review. The release
 descriptor—not package payloads—sets private publication/classification/maturity metadata.
 Independent QA and security review are the next receivers; a later independent PR reviewer and

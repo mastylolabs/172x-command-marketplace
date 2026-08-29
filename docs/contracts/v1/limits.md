@@ -1,6 +1,6 @@
-# v1 private implementation bounds
+# v1 implementation bounds
 
-These values are finite parser/fixture bounds for this private v1 implementation. They are not
+These values are finite parser/fixture bounds for this v1 implementation. They are not
 evidence-backed public scale, support, performance, availability, or compatibility limits.
 
 | Item | v1 bound |
@@ -19,7 +19,7 @@ evidence-backed public scale, support, performance, availability, or compatibili
 | Slot occupancy maximum | 8 |
 | Widget/Panel grid dimensions | 1–12 |
 
-Semantic versions are strict `X.Y.Z`. The only v1 range grammar is `>=X.Y.Z <X.Y.Z`. The private
+Semantic versions are strict `X.Y.Z`. The only v1 range grammar is `>=X.Y.Z <X.Y.Z`. The current
 validation context is host `0.1.0`, extension API `1.0.0`, type-contract major `1`, and the
 `platform-neutral`/`host-build-defined` markers. Those values make incompatible fixtures
 deterministic; they are not public 172X Command support claims.
@@ -43,6 +43,6 @@ deny service; no cross-platform hostile-filesystem or network-filesystem guarant
 
 The developer-documentation preflight inventories every MkDocs-consumed source path before reading
 one, rejects symbolic links and non-regular inputs, and then uses the bounded non-following reader.
-The same preflight binds the exact private v1 MkDocs configuration before the gate may execute
+The same preflight binds the exact v1 MkDocs configuration before the gate may execute
 MkDocs. Review-only `docs/architecture/**` and `docs/README.md` remain outside the generated
 documentation source set; internal validation evidence stays outside the Git-visible docs tree.

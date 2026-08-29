@@ -1,7 +1,7 @@
-# Private package authoring
+# Package authoring
 
-External contributions are not open. These steps describe reproducible local work on authorized
-private fixtures or representative packages only.
+External source contributions are open. These steps describe reproducible work on package
+proposals; validation or merge does not make a package installable or published.
 
 1. Choose one v1 type/delivery pair: Theme/Panel=`declarative-data` or
    Widget=`host-bundled-source`.

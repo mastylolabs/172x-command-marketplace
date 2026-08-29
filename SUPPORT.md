@@ -1,10 +1,10 @@
 # Support
 
-172X Command Marketplace is currently private and pre-release. Private Wave 1 contracts and local
-tooling exist, but public package installation, runtime compatibility, provider-hosted developer
-documentation, and contributor support are not available.
+172X Command Marketplace is a public-source developer preview. Contracts, local tooling, package
+proposals, issues, and pull requests are available, but public package installation and production
+catalog publication are not.
 
-## When public support opens
+## Community support
 
 - Use **Issues** for reproducible defects in marketplace packages, schemas, validators, registry
   metadata, and contributor tooling.
@@ -13,6 +13,9 @@ documentation, and contributor support are not available.
 - Use the extension proposal form for new packages, capabilities, or public contract changes.
 - Follow [SECURITY.md](SECURITY.md) for private vulnerability reports.
 - Follow [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for private conduct reports.
+
+For a private non-security contact, email [support@172x.ai](mailto:support@172x.ai). Response times
+are not guaranteed during the developer preview.
 
 Before filing, search existing issues and provide the package ID, version, Command version,
 platform, reproduction steps, expected result, observed result, and sanitized diagnostics when

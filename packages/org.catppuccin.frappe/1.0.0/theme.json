@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "appearance": "dark",
+    "attribution": "Adapted from the Catppuccin Frappé palette; Catppuccin palette authorship and marks remain with their respective owners.",
+    "name": "Catppuccin Frappé"
+  },
+  "packageId": "org.catppuccin.frappe",
+  "packageVersion": "1.0.0",
+  "schemaVersion": 1,
+  "tokens": {
+    "accent": "#ca9ee6",
+    "background": "#303446",
+    "border": "#626880",
+    "danger": "#e78284",
+    "focus": "#babbf1",
+    "info": "#8caaee",
+    "selection": "#51576d",
+    "success": "#a6d189",
+    "surface": "#292c3c",
+    "surfaceElevated": "#414559",
+    "syntaxComment": "#737994",
+    "syntaxKeyword": "#ca9ee6",
+    "syntaxNumber": "#ef9f76",
+    "syntaxString": "#a6d189",
+    "terminalBackground": "#232634",
+    "terminalForeground": "#c6d0f5",
+    "textMuted": "#838ba7",
+    "textPrimary": "#c6d0f5",
+    "textSecondary": "#b5bfe2",
+    "warning": "#e5c890"
+  },
+  "type": "theme"
+}

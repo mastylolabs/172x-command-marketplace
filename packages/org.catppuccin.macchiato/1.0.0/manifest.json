@@ -1,0 +1,117 @@
+{
+  "capabilities": [],
+  "compatibility": {
+    "commandHostRange": ">=0.1.0 <1.0.0",
+    "conflicts": [],
+    "dependencies": [],
+    "extensionApiRange": ">=1.0.0 <2.0.0",
+    "platforms": [
+      "platform-neutral"
+    ],
+    "typeContractMajor": 1
+  },
+  "contract": {
+    "artifactId": "172X-MKT-MANIFEST-001",
+    "version": "v1"
+  },
+  "developerDocs": [
+    {
+      "contractVersion": "v1",
+      "sha256": "4608cab3ba4366905bf89a0b86b27ece23661db5e813acc8b9c6d0b4b1aced90",
+      "topic": "Catppuccin Macchiato private starter",
+      "uri": "packages/org.catppuccin.macchiato/1.0.0/README.md"
+    }
+  ],
+  "license": {
+    "file": {
+      "sha256": "814096d2c34cc216c624738a49356f32b7237733b4f7edb0685f4e50ef5074ba",
+      "uri": "packages/org.catppuccin.mocha/1.0.0/LICENSE"
+    },
+    "spdx": "MIT",
+    "thirdPartyNotices": [
+      {
+        "sha256": "e2902bb988ccaf79a68af6dac7261c04ff5d10b2591ca2f3e6c9e35464f8e117",
+        "uri": "packages/org.catppuccin.macchiato/1.0.0/NOTICE.md"
+      }
+    ]
+  },
+  "lifecycle": {
+    "dataRetention": "not-applicable",
+    "rollback": "host-owned-last-valid",
+    "state": "accepted-unpublished"
+  },
+  "package": {
+    "deliveryMode": "declarative-data",
+    "description": "A private inert Theme adaptation of the Catppuccin Macchiato palette with pinned upstream provenance.",
+    "id": "org.catppuccin.macchiato",
+    "name": "Catppuccin Macchiato",
+    "summary": "Private declarative Catppuccin Macchiato Theme package.",
+    "type": "theme",
+    "version": "1.0.0"
+  },
+  "payloads": [
+    {
+      "mediaType": "application/json",
+      "role": "theme-data",
+      "sha256": "aa770c5f7b84ab77bda87380e9f8e9ae19e48059debf0c8a94dba7ea8ebc2c89",
+      "size": 943,
+      "uri": "packages/org.catppuccin.macchiato/1.0.0/theme.json"
+    },
+    {
+      "mediaType": "text/markdown",
+      "role": "documentation",
+      "sha256": "4608cab3ba4366905bf89a0b86b27ece23661db5e813acc8b9c6d0b4b1aced90",
+      "size": 425,
+      "uri": "packages/org.catppuccin.macchiato/1.0.0/README.md"
+    },
+    {
+      "mediaType": "text/markdown",
+      "role": "notice",
+      "sha256": "e2902bb988ccaf79a68af6dac7261c04ff5d10b2591ca2f3e6c9e35464f8e117",
+      "size": 315,
+      "uri": "packages/org.catppuccin.macchiato/1.0.0/NOTICE.md"
+    },
+    {
+      "mediaType": "text/plain",
+      "role": "license",
+      "sha256": "814096d2c34cc216c624738a49356f32b7237733b4f7edb0685f4e50ef5074ba",
+      "size": 1067,
+      "uri": "packages/org.catppuccin.mocha/1.0.0/LICENSE"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "authors": [
+      {
+        "evidence": "declared",
+        "name": "Mastylo Labs LLC",
+        "role": "package-author"
+      },
+      {
+        "evidence": "declared",
+        "name": "Catppuccin",
+        "role": "upstream-palette-author"
+      }
+    ],
+    "repositoryUri": "packages/org.catppuccin.macchiato/1.0.0/README.md",
+    "revision": "172X-private-package-v1",
+    "upstream": [
+      {
+        "attribution": "Color values derive from Catppuccin Macchiato palette 1.8.0; 172X claims no authorship or ownership of Catppuccin palette or marks.",
+        "licenseSpdx": "MIT",
+        "project": "Catppuccin Palette",
+        "repositoryIdentity": "github:catppuccin/palette",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd"
+      }
+    ]
+  },
+  "trust": {
+    "authorEvidence": "declared",
+    "maintenance": "limited",
+    "official": false,
+    "provenance": "source-correlated",
+    "review": "unreviewed",
+    "security": "not-reviewed",
+    "sourceAvailability": "immutable-revision-linked"
+  }
+}
