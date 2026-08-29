@@ -1,0 +1,117 @@
+{
+  "capabilities": [],
+  "compatibility": {
+    "commandHostRange": ">=0.1.0 <1.0.0",
+    "conflicts": [],
+    "dependencies": [],
+    "extensionApiRange": ">=1.0.0 <2.0.0",
+    "platforms": [
+      "platform-neutral"
+    ],
+    "typeContractMajor": 1
+  },
+  "contract": {
+    "artifactId": "172X-MKT-MANIFEST-001",
+    "version": "v1"
+  },
+  "developerDocs": [
+    {
+      "contractVersion": "v1",
+      "sha256": "5bb24b7349f1109f20760fa05dba0646d0c5ddc10813869a9e9cf86d64503f68",
+      "topic": "Catppuccin Frappé private starter",
+      "uri": "packages/org.catppuccin.frappe/1.0.0/README.md"
+    }
+  ],
+  "license": {
+    "file": {
+      "sha256": "814096d2c34cc216c624738a49356f32b7237733b4f7edb0685f4e50ef5074ba",
+      "uri": "packages/org.catppuccin.mocha/1.0.0/LICENSE"
+    },
+    "spdx": "MIT",
+    "thirdPartyNotices": [
+      {
+        "sha256": "43d7aed8006f9fd379f6eabc8397cb49cb72d6c8340a3414f3eaf2994d9699f1",
+        "uri": "packages/org.catppuccin.frappe/1.0.0/NOTICE.md"
+      }
+    ]
+  },
+  "lifecycle": {
+    "dataRetention": "not-applicable",
+    "rollback": "host-owned-last-valid",
+    "state": "accepted-unpublished"
+  },
+  "package": {
+    "deliveryMode": "declarative-data",
+    "description": "A private inert Theme adaptation of the Catppuccin Frappé palette with pinned upstream provenance.",
+    "id": "org.catppuccin.frappe",
+    "name": "Catppuccin Frappé",
+    "summary": "Private declarative Catppuccin Frappé Theme package.",
+    "type": "theme",
+    "version": "1.0.0"
+  },
+  "payloads": [
+    {
+      "mediaType": "application/json",
+      "role": "theme-data",
+      "sha256": "ae657aeb6494e57dcee74ed77cd4c881f7e20635a5d0ef84990774bdec7936df",
+      "size": 936,
+      "uri": "packages/org.catppuccin.frappe/1.0.0/theme.json"
+    },
+    {
+      "mediaType": "text/markdown",
+      "role": "documentation",
+      "sha256": "5bb24b7349f1109f20760fa05dba0646d0c5ddc10813869a9e9cf86d64503f68",
+      "size": 420,
+      "uri": "packages/org.catppuccin.frappe/1.0.0/README.md"
+    },
+    {
+      "mediaType": "text/markdown",
+      "role": "notice",
+      "sha256": "43d7aed8006f9fd379f6eabc8397cb49cb72d6c8340a3414f3eaf2994d9699f1",
+      "size": 313,
+      "uri": "packages/org.catppuccin.frappe/1.0.0/NOTICE.md"
+    },
+    {
+      "mediaType": "text/plain",
+      "role": "license",
+      "sha256": "814096d2c34cc216c624738a49356f32b7237733b4f7edb0685f4e50ef5074ba",
+      "size": 1067,
+      "uri": "packages/org.catppuccin.mocha/1.0.0/LICENSE"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "authors": [
+      {
+        "evidence": "declared",
+        "name": "Mastylo Labs LLC",
+        "role": "package-author"
+      },
+      {
+        "evidence": "declared",
+        "name": "Catppuccin",
+        "role": "upstream-palette-author"
+      }
+    ],
+    "repositoryUri": "packages/org.catppuccin.frappe/1.0.0/README.md",
+    "revision": "172X-private-package-v1",
+    "upstream": [
+      {
+        "attribution": "Color values derive from Catppuccin Frappé palette 1.8.0; 172X claims no authorship or ownership of Catppuccin palette or marks.",
+        "licenseSpdx": "MIT",
+        "project": "Catppuccin Palette",
+        "repositoryIdentity": "github:catppuccin/palette",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd"
+      }
+    ]
+  },
+  "trust": {
+    "authorEvidence": "declared",
+    "maintenance": "limited",
+    "official": false,
+    "provenance": "source-correlated",
+    "review": "unreviewed",
+    "security": "not-reviewed",
+    "sourceAvailability": "immutable-revision-linked"
+  }
+}

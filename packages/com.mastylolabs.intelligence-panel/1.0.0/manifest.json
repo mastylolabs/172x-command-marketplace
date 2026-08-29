@@ -1,0 +1,92 @@
+{
+  "capabilities": [],
+  "compatibility": {
+    "commandHostRange": ">=0.1.0 <1.0.0",
+    "conflicts": [],
+    "dependencies": [],
+    "extensionApiRange": ">=1.0.0 <2.0.0",
+    "platforms": [
+      "platform-neutral"
+    ],
+    "typeContractMajor": 1
+  },
+  "contract": {
+    "artifactId": "172X-MKT-MANIFEST-001",
+    "version": "v1"
+  },
+  "developerDocs": [
+    {
+      "contractVersion": "v1",
+      "sha256": "300c39dec74c378f7923eec6ecc221b36e71ff0e5a0902cda1d6545dd4caca4c",
+      "topic": "Intelligence Panel private starter",
+      "uri": "packages/com.mastylolabs.intelligence-panel/1.0.0/README.md"
+    }
+  ],
+  "license": {
+    "file": {
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "uri": "LICENSE"
+    },
+    "spdx": "Apache-2.0",
+    "thirdPartyNotices": []
+  },
+  "lifecycle": {
+    "dataRetention": "not-applicable",
+    "rollback": "host-owned-last-valid",
+    "state": "accepted-unpublished"
+  },
+  "package": {
+    "deliveryMode": "declarative-data",
+    "description": "Private declarative Panel starter with explicit host-selected placement only.",
+    "id": "com.mastylolabs.intelligence-panel",
+    "name": "Intelligence Panel",
+    "summary": "Private Intelligence Panel panel starter.",
+    "type": "panel",
+    "version": "1.0.0"
+  },
+  "payloads": [
+    {
+      "mediaType": "application/json",
+      "role": "panel-data",
+      "sha256": "ca66bd73e1f44a084d2b8841d9b374225d6f021f3b1190c3858bdded43d53cfd",
+      "size": 728,
+      "uri": "packages/com.mastylolabs.intelligence-panel/1.0.0/panel.json"
+    },
+    {
+      "mediaType": "text/markdown",
+      "role": "documentation",
+      "sha256": "300c39dec74c378f7923eec6ecc221b36e71ff0e5a0902cda1d6545dd4caca4c",
+      "size": 245,
+      "uri": "packages/com.mastylolabs.intelligence-panel/1.0.0/README.md"
+    },
+    {
+      "mediaType": "text/plain",
+      "role": "license",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "size": 11357,
+      "uri": "LICENSE"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "authors": [
+      {
+        "evidence": "declared",
+        "name": "Mastylo Labs LLC",
+        "role": "package-author"
+      }
+    ],
+    "repositoryUri": "packages/com.mastylolabs.intelligence-panel/1.0.0/README.md",
+    "revision": "private-scaffold-v1",
+    "upstream": []
+  },
+  "trust": {
+    "authorEvidence": "declared",
+    "maintenance": "limited",
+    "official": false,
+    "provenance": "digest-recorded",
+    "review": "unreviewed",
+    "security": "not-reviewed",
+    "sourceAvailability": "linked"
+  }
+}

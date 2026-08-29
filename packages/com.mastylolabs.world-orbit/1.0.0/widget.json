@@ -1,0 +1,32 @@
+{
+  "availability": "requires-compatible-command-build",
+  "buildAssociation": {
+    "inventoryIdentity": "com.mastylolabs.world-orbit@1.0.0",
+    "mode": "exact-host-build-inventory",
+    "state": "not-bundled"
+  },
+  "dataInputs": [],
+  "deliveryMode": "host-bundled-source",
+  "packageId": "com.mastylolabs.world-orbit",
+  "packageVersion": "1.0.0",
+  "placement": {
+    "preferredRoles": [
+      "sidebar-primary"
+    ],
+    "size": {
+      "maxHeight": 4,
+      "maxWidth": 6,
+      "minHeight": 1,
+      "minWidth": 2
+    }
+  },
+  "runtimeDownload": false,
+  "runtimeLoading": "prohibited",
+  "schemaVersion": 1,
+  "sourceAssociation": {
+    "sourceRevision": "private-scaffold-v1",
+    "sourceSha256": "a871cf7ad99d95a4bb433c06667ae3cdc7b5d060a0a84ee5f6a8f9bca1e6d2bd",
+    "sourceUri": "packages/com.mastylolabs.world-orbit/1.0.0/src/Widget.ts"
+  },
+  "type": "widget"
+}

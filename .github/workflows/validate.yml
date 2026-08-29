@@ -1,4 +1,4 @@
-name: Validate private marketplace contracts
+name: Validate marketplace contracts
 
 on:
   pull_request:

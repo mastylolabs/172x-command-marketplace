@@ -1,0 +1,99 @@
+{
+  "capabilities": [],
+  "compatibility": {
+    "commandHostRange": ">=0.1.0 <1.0.0",
+    "conflicts": [],
+    "dependencies": [],
+    "extensionApiRange": ">=1.0.0 <2.0.0",
+    "platforms": [
+      "host-build-defined"
+    ],
+    "typeContractMajor": 1
+  },
+  "contract": {
+    "artifactId": "172X-MKT-MANIFEST-001",
+    "version": "v1"
+  },
+  "developerDocs": [
+    {
+      "contractVersion": "v1",
+      "sha256": "5c798cc460398550b560bcafbb254aefedda5f20f4aff09fb3280a0005e6dd6f",
+      "topic": "World Orbit private starter",
+      "uri": "packages/com.mastylolabs.world-orbit/1.0.0/README.md"
+    }
+  ],
+  "license": {
+    "file": {
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "uri": "LICENSE"
+    },
+    "spdx": "Apache-2.0",
+    "thirdPartyNotices": []
+  },
+  "lifecycle": {
+    "dataRetention": "host-owned-preserve-until-explicit-purge",
+    "rollback": "host-build-rollback-only",
+    "state": "accepted-unpublished"
+  },
+  "package": {
+    "deliveryMode": "host-bundled-source",
+    "description": "Private review source for a Widget that must be compiled into an exact compatible Command build.",
+    "id": "com.mastylolabs.world-orbit",
+    "name": "World Orbit",
+    "summary": "Private World Orbit widget starter.",
+    "type": "widget",
+    "version": "1.0.0"
+  },
+  "payloads": [
+    {
+      "mediaType": "application/json",
+      "role": "widget-data",
+      "sha256": "6123278ef43ed16ce60601b9440c2a53f1d35edef1993e170d7565f59ac1d912",
+      "size": 879,
+      "uri": "packages/com.mastylolabs.world-orbit/1.0.0/widget.json"
+    },
+    {
+      "mediaType": "text/typescript",
+      "role": "widget-source",
+      "sha256": "a871cf7ad99d95a4bb433c06667ae3cdc7b5d060a0a84ee5f6a8f9bca1e6d2bd",
+      "size": 193,
+      "uri": "packages/com.mastylolabs.world-orbit/1.0.0/src/Widget.ts"
+    },
+    {
+      "mediaType": "text/markdown",
+      "role": "documentation",
+      "sha256": "5c798cc460398550b560bcafbb254aefedda5f20f4aff09fb3280a0005e6dd6f",
+      "size": 232,
+      "uri": "packages/com.mastylolabs.world-orbit/1.0.0/README.md"
+    },
+    {
+      "mediaType": "text/plain",
+      "role": "license",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "size": 11357,
+      "uri": "LICENSE"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "authors": [
+      {
+        "evidence": "declared",
+        "name": "Mastylo Labs LLC",
+        "role": "package-author"
+      }
+    ],
+    "repositoryUri": "packages/com.mastylolabs.world-orbit/1.0.0/README.md",
+    "revision": "private-scaffold-v1",
+    "upstream": []
+  },
+  "trust": {
+    "authorEvidence": "declared",
+    "maintenance": "limited",
+    "official": false,
+    "provenance": "digest-recorded",
+    "review": "unreviewed",
+    "security": "not-reviewed",
+    "sourceAvailability": "linked"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "automaticPlacement": false,
+  "layoutRole": "right-sidebar",
+  "packageId": "com.mastylolabs.intelligence-panel",
+  "packageVersion": "1.0.0",
+  "schemaVersion": 1,
+  "slots": [
+    {
+      "acceptedWidget": {
+        "apiRange": ">=1.0.0 <2.0.0",
+        "typeContractMajor": 1
+      },
+      "behaviorHints": [
+        "resizable",
+        "collapsible",
+        "scrollable"
+      ],
+      "conflicts": [],
+      "id": "primary",
+      "occupancy": {
+        "maximum": 8,
+        "minimum": 0,
+        "overflow": "host-scroll"
+      },
+      "role": "sidebar-primary",
+      "size": {
+        "maxHeight": 12,
+        "maxWidth": 8,
+        "minHeight": 1,
+        "minWidth": 2
+      }
+    }
+  ],
+  "type": "panel"
+}

@@ -1,18 +1,17 @@
 # 172X Command Marketplace
 
-Private contracts, validation tooling, representative packages, and static catalog source for the
-planned 172X Command extension ecosystem.
+Open-source contracts, validation tooling, reviewed package proposals, and static catalog source
+for the 172X Command extension ecosystem.
 
-> **Status:** Private Wave 1 contract release. Strict v1 contracts, local tooling, fixtures,
-> developer docs, and two representative packages exist locally. This repository does not publish
-> an installable marketplace, supported extension SDK, public package catalog, public developer
-> documentation, or Command host integration.
+> **Status:** Public-source developer preview. Strict v1 contracts, local tooling, fixtures,
+> developer documentation, and reviewed package proposals are available. Public installation,
+> production catalog signing, and downloaded executable extensions are not available.
 
 ## Purpose
 
 This repository is the canonical owner of the planned marketplace package contracts, validation
-tooling, examples, static registry metadata, and developer documentation. The current artifacts are
-private implementation evidence only, not a public or supported release.
+tooling, examples, static registry metadata, and developer documentation. Repository publication
+does not make any package installable, supported, Official, or included in a signed release.
 
 The v1 technical taxonomy is:
 
@@ -35,7 +34,7 @@ downloadable executable plugin runtime is not available and must not be inferred
 repository. Downloaded code will not be executed in the main Command renderer merely because it is
 submitted as an extension.
 
-## Private Wave 1 contents
+## Current contents
 
 The current coherent local release contains:
 
@@ -61,16 +60,27 @@ uv sync --locked --all-groups --no-install-project
 PYTHONPATH=src uv run --no-sync python scripts/gate.py
 ```
 
-Focused commands and stable failure behavior are documented in the private
+Create a deterministic package proposal without overwriting an existing package:
+
+```sh
+PYTHONPATH=src uv run --no-sync python -m marketplace_contracts.cli scaffold --type theme --id com.example.my-theme --name "My Theme"
+PYTHONPATH=src uv run --no-sync python -m marketplace_contracts.cli package packages/com.example.my-theme/1.0.0/manifest.json
+```
+
+The scaffold command also accepts `widget` and `panel`. Widget output is review source only and
+remains unavailable until that exact package is reviewed and compiled into a compatible Command
+build. Scaffolding does not add a package to a release, sign it, or publish it.
+
+Focused commands and stable failure behavior are documented in the
 [v1 validation reference](docs/contracts/v1/validation.md). A local pass is implementation evidence,
 not independent QA/security review, PR approval, public support, publication, or release.
 
 ## Contribution status
 
-External contributions are not open yet. The repository now records its contribution, conduct,
-security, support, governance, DCO, and review policies so they can be tested before publication.
-External submissions remain closed. See [CONTRIBUTING.md](CONTRIBUTING.md) for the private current
-state and preserved future contribution policy.
+External issues and pull requests are open for the bounded contribution areas described in
+[CONTRIBUTING.md](CONTRIBUTING.md). Every submission remains subject to validation, provenance,
+security, accessibility, maintainer review, and DCO requirements. Acceptance or merge does not
+publish a package or grant Official status.
 
 Community and governance documents:
 
@@ -87,7 +97,7 @@ Community and governance documents:
 
 - Product: **172X Command**
 - Publisher: **Mastylo Labs LLC**
-- Planned website: <https://command.172x.ai>
+- Website: <https://command.172x.ai>
 
 ## Licensing and trademarks
 

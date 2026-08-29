@@ -2,31 +2,29 @@
 
 ## Current support state
 
-172X Command Marketplace is a private pre-release repository. It has strict private Wave 1
-contracts, local validation/build tooling, fixtures, and two representative source packages. It
-has no public package catalog, supported extension SDK, Command host integration, downloadable
-executable runtime, or supported public release.
+172X Command Marketplace is a public-source developer preview. It has strict v1 contracts, local
+validation/build tooling, fixtures, and reviewed package proposals. It has no public installable
+catalog, production signing service, downloadable executable runtime, or supported package release.
 
 | Release | Security support |
 | --- | --- |
-| No public release | Pre-release reports are handled privately on a best-effort basis |
+| Public-source developer preview | Reports are handled privately on a best-effort basis |
 
-This policy will be updated with exact supported versions and response expectations before the
-repository or packages are publicly released.
+This policy will be updated with exact supported package versions and response expectations before
+public installation is enabled.
 
 ## Reporting a vulnerability
 
 Do not report vulnerabilities in a public issue, discussion, pull request, screenshot, or social
 post.
 
-When GitHub private vulnerability reporting is enabled for this repository, use:
+Use GitHub private vulnerability reporting:
 
 <https://github.com/mastylolabs/172x-command-marketplace/security/advisories/new>
 
-While the repository remains private, invited collaborators should contact repository owner
-[@zmastylo](https://github.com/zmastylo) privately through an established collaborator channel.
-Before public contributions open, Mastylo Labs LLC will verify that private vulnerability reporting
-works and publish a monitored fallback contact method.
+If GitHub private reporting is unavailable, email [support@172x.ai](mailto:support@172x.ai). Do not
+send exploit details through a public issue. Mailbox monitoring must be verified before a supported
+package release is announced.
 
 Include only what is necessary to reproduce and assess the issue:
 

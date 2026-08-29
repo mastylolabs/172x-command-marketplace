@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "fixtureOnly": true,
+  "keys": [
+    {
+      "keyId": "mkt-test-ed25519-2026-01",
+      "privateSeed": "e9sTdMpPBqp7KRnYfJ2PJC9u58KX6wLtzsIvWOq7I2s",
+      "publicKey": "JwdyTUtCJXhnDFNY4r6rRTgD7X-t7IJEmXGDINoNwJQ"
+    },
+    {
+      "keyId": "mkt-test-ed25519-2026-02",
+      "privateSeed": "EbN0iZTDpsfX1vK78QWXhNBUhzZq7JR6NfjC89L2nvg",
+      "publicKey": "mfvhn77EYKnGumVGEKMq9fxcqJPSudmnhSLeigMWKWs"
+    }
+  ]
+}

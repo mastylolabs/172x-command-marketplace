@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "appearance": "dark",
+    "attribution": "Adapted from the Catppuccin Macchiato palette; Catppuccin palette authorship and marks remain with their respective owners.",
+    "name": "Catppuccin Macchiato"
+  },
+  "packageId": "org.catppuccin.macchiato",
+  "packageVersion": "1.0.0",
+  "schemaVersion": 1,
+  "tokens": {
+    "accent": "#c6a0f6",
+    "background": "#24273a",
+    "border": "#5b6078",
+    "danger": "#ed8796",
+    "focus": "#b7bdf8",
+    "info": "#8aadf4",
+    "selection": "#494d64",
+    "success": "#a6da95",
+    "surface": "#1e2030",
+    "surfaceElevated": "#363a4f",
+    "syntaxComment": "#6e738d",
+    "syntaxKeyword": "#c6a0f6",
+    "syntaxNumber": "#f5a97f",
+    "syntaxString": "#a6da95",
+    "terminalBackground": "#181926",
+    "terminalForeground": "#cad3f5",
+    "textMuted": "#8087a2",
+    "textPrimary": "#cad3f5",
+    "textSecondary": "#b8c0e0",
+    "warning": "#eed49f"
+  },
+  "type": "theme"
+}

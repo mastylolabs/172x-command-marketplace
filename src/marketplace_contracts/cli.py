@@ -11,6 +11,8 @@ from .docs_check import validate_docs, validate_site_output
 from .fixtures import validate_fixtures
 from .io import load_json, resolve_reference
 from .model import ContractError, ValidationReport
+from .scaffold import scaffold_package
+from .trust import TEST_TRUST_OUTPUT, build_test_trust_bundle, check_test_trust_bundle, source_tree_digest
 from .validator import validate_catalog_snapshot, validate_file, validate_package, validate_schemas
 
 
@@ -51,8 +53,10 @@ def _verify(repo_root: Path) -> dict[str, Any]:
     if invalid:
         issues = [issue for report in invalid for issue in report.issues]
         raise ContractError(issues)
+    trust_result = check_test_trust_bundle(repo_root)
     return {
         "build": build_result,
+        "trust": trust_result,
         "checks": [report.target for report in reports],
         "status": "passed",
     }
@@ -78,6 +82,17 @@ def build_parser() -> argparse.ArgumentParser:
     build = subparsers.add_parser("build")
     build.add_argument("--output", default=DEFAULT_OUTPUT)
     build.add_argument("--check", action="store_true")
+    trust = subparsers.add_parser("trust-fixture")
+    trust.add_argument("--output", default=TEST_TRUST_OUTPUT)
+    trust.add_argument("--check", action="store_true")
+    source_digest = subparsers.add_parser("source-digest")
+    source_digest.add_argument("path")
+    source_digest.add_argument("--revision", default="HEAD")
+    scaffold = subparsers.add_parser("scaffold")
+    scaffold.add_argument("--type", required=True, choices=["theme", "widget", "panel"])
+    scaffold.add_argument("--id", required=True)
+    scaffold.add_argument("--name", required=True)
+    scaffold.add_argument("--version", default="1.0.0")
     subparsers.add_parser("verify")
     return parser
 
@@ -111,6 +126,18 @@ def main(argv: list[str] | None = None) -> int:
             output = _input_path(repo_root, args.output)
             result = check_catalog(repo_root, output) if args.check else build_catalog(repo_root, output)
             _print({"status": "passed", **result})
+            return 0
+        if args.command == "trust-fixture":
+            output = _input_path(repo_root, args.output)
+            result = check_test_trust_bundle(repo_root, output) if args.check else build_test_trust_bundle(repo_root, output)
+            _print({"status": "passed", **result})
+            return 0
+        if args.command == "source-digest":
+            commit, digest, paths = source_tree_digest(repo_root, args.revision, args.path)
+            _print({"commit": commit, "path": args.path, "sha256": digest, "trackedFiles": list(paths)})
+            return 0
+        if args.command == "scaffold":
+            _print(scaffold_package(repo_root, args.type, args.id, args.name, args.version))
             return 0
         if args.command == "verify":
             _print(_verify(repo_root))

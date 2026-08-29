@@ -2,9 +2,9 @@
 
 Thank you for your interest in the 172X Command extension ecosystem.
 
-> **Current state:** This repository is private and external contributions are not open yet. The
-> process below is being established and tested with the initial reference packages before public
-> submissions begin.
+> **Current state:** Public-source contributions are open for the bounded areas below. Package
+> installation and production catalog publication remain closed until their separate release gates
+> pass.
 
 ## Before contributing
 
@@ -22,7 +22,7 @@ private user data, or active abuse report.
 
 ## Supported contribution areas
 
-Once public submissions open, contributions may include:
+Contributions may include:
 
 - declarative Themes;
 - Widget source compatible with the host-bundled contract; marketplace bytes are never runtime-loaded;
@@ -68,14 +68,14 @@ assets, telemetry without an approved contract, or code/content you do not have 
 
 ## Development and validation
 
-The private Wave 1 toolchain is Python 3.14 plus repository-local, locked uv dependencies:
+The v1 toolchain is Python 3.14 plus repository-local, locked uv dependencies:
 
 ```sh
 uv sync --locked --all-groups --no-install-project
 PYTHONPATH=src uv run --no-sync python scripts/gate.py
 ```
 
-The complete command validates schemas, fixture expectations, both private representative
+The complete command validates schemas, fixture expectations, representative and proposed
 packages, generated catalog synchronization, documentation/examples/links, pytest, and MkDocs
 strict mode. Focused commands and implementation bounds are documented under
 `docs/contracts/v1/`. CI uses the same complete command and no secrets.
