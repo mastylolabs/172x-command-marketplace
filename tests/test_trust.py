@@ -20,6 +20,7 @@ from marketplace_contracts.trust import (
     b64url_decode,
     canonical_json,
     check_test_trust_bundle,
+    latest_path_commit,
     private_test_key,
     sign_envelope,
     source_tree_digest,
@@ -116,6 +117,25 @@ def test_source_digest_matches_independent_git_object_computation(repo_root: Pat
         ).hexdigest())
     expected = hashlib.sha256(b"tree-v1\0" + "\n".join(leaves).encode()).hexdigest()
     assert observed == expected == "a1c7383525aa93ba1d8de44dbe7a385a73e58a99b3ec7b8c26c9d17eef0bc363"
+
+
+def test_latest_path_commit_ignores_unrelated_head_commit(tmp_path: Path) -> None:
+    subprocess.run(["git", "init", "-q"], cwd=tmp_path, check=True)
+    subprocess.run(["git", "config", "user.name", "172X Test"], cwd=tmp_path, check=True)
+    subprocess.run(["git", "config", "user.email", "test@172x.invalid"], cwd=tmp_path, check=True)
+    package = tmp_path / "packages/com.example.clock/1.0.0"
+    package.mkdir(parents=True)
+    (package / "manifest.json").write_text("{}\n")
+    subprocess.run(["git", "add", "packages"], cwd=tmp_path, check=True)
+    subprocess.run(["git", "commit", "-qm", "package"], cwd=tmp_path, check=True)
+    package_commit = subprocess.run(
+        ["git", "rev-parse", "HEAD"], cwd=tmp_path, check=True, capture_output=True, text=True
+    ).stdout.strip()
+    (tmp_path / "README.md").write_text("unrelated\n")
+    subprocess.run(["git", "add", "README.md"], cwd=tmp_path, check=True)
+    subprocess.run(["git", "commit", "-qm", "unrelated"], cwd=tmp_path, check=True)
+
+    assert latest_path_commit(tmp_path, "packages/com.example.clock/1.0.0") == package_commit
 
 
 def test_trust_cli_checks_without_exposing_a_production_key(repo_root: Path, capsys: pytest.CaptureFixture[str]) -> None:

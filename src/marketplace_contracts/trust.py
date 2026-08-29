@@ -77,6 +77,16 @@ def resolve_commit(repo_root: Path, revision: str) -> str:
     return resolved
 
 
+def latest_path_commit(repo_root: Path, package_path: str) -> str:
+    posix_path = PurePosixPath(package_path)
+    if posix_path.is_absolute() or any(part in {"", ".", ".."} for part in posix_path.parts):
+        raise ContractError([ValidationIssue("SOURCE_PATH_INVALID", "sourceBinding.packagePath", "package path must be a canonical repository-relative path")])
+    revision = str(_run_git(repo_root, ["log", "-1", "--format=%H", "--", package_path])).strip()
+    if not revision:
+        raise ContractError([ValidationIssue("SOURCE_IDENTITY_UNAVAILABLE", "sourceBinding.commit", "package source must exist in immutable Git history")])
+    return resolve_commit(repo_root, revision)
+
+
 def source_tree_digest(repo_root: Path, revision: str, package_path: str) -> tuple[str, str, tuple[str, ...]]:
     posix_path = PurePosixPath(package_path)
     if posix_path.is_absolute() or any(part in {"", ".", ".."} for part in posix_path.parts):
@@ -292,7 +302,12 @@ def compose_test_trust_bundle(repo_root: Path) -> dict[str, bytes]:
         if not isinstance(manifest_uri, str):
             raise ContractError([ValidationIssue("CATALOG_INVALID", "catalog.entries.manifestUri", "manifest reference is invalid")])
         package_path = str(PurePosixPath(manifest_uri).parent)
-        commit, tree_digest, _paths = source_tree_digest(repo_root, "HEAD", package_path)
+        commit = latest_path_commit(repo_root, package_path)
+        committed_manifest = _run_git(repo_root, ["show", f"{commit}:{manifest_uri}"], binary=True)
+        assert isinstance(committed_manifest, bytes)
+        if sha256_bytes(committed_manifest) != str(entry["manifestSha256"]):
+            raise ContractError([ValidationIssue("SOURCE_BINDING_UNCOMMITTED", manifest_uri, "catalog manifest bytes must exist in immutable Git history before trust signing")])
+        commit, tree_digest, _paths = source_tree_digest(repo_root, commit, package_path)
         source_bindings.append(
             {
                 "manifestSha256": str(entry["manifestSha256"]),
