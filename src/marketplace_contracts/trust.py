@@ -27,6 +27,7 @@ _HEX_SHA256 = re.compile(r"^[0-9a-f]{64}$")
 _KEY_ID = re.compile(r"^[a-z0-9][a-z0-9-]{2,63}$")
 _PACKAGE_ID = re.compile(r"^[a-z0-9]+(?:[.-][a-z0-9]+){2,}$")
 TEST_TRUST_OUTPUT = "registry/trust/v1/test"
+TEST_BUNDLE_NAME = "bundle-v1.json"
 TEST_KEY_FIXTURE = "fixtures/crypto/test-signing-keys.json"
 TEST_KEY_RING = "fixtures/crypto/trusted-key-ring-v1.json"
 TEST_ISSUED_AT = "2026-08-28T00:00:00Z"
@@ -332,7 +333,14 @@ def compose_test_trust_bundle(repo_root: Path) -> dict[str, bytes]:
     }
     key_id = "mkt-test-ed25519-2026-01"
     envelope_bytes, signatures_bytes = sign_envelope(envelope, key_id, _test_key(repo_root, key_id))
+    bundle_bytes = canonical_json({
+        "catalog": catalog_bytes.decode("utf-8"),
+        "envelope": envelope_bytes.decode("utf-8"),
+        "revocations": revocations_bytes.decode("utf-8"),
+        "signatures": signatures_bytes.decode("utf-8"),
+    })
     return {
+        TEST_BUNDLE_NAME: bundle_bytes,
         "catalog-envelope-v1.json": envelope_bytes,
         "catalog-envelope-v1.signatures.json": signatures_bytes,
         "source-bindings-v1.json": canonical_json({"schemaVersion": 1, "sourceBindings": source_bindings}),

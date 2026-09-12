@@ -14,6 +14,7 @@ PYTHONPATH=src uv run --no-sync python -m marketplace_contracts.cli fixtures
 PYTHONPATH=src uv run --no-sync python -m marketplace_contracts.cli package packages/org.catppuccin.mocha/1.0.0/manifest.json
 PYTHONPATH=src uv run --no-sync python -m marketplace_contracts.cli package packages/com.mastylolabs.clock/1.0.0/manifest.json
 PYTHONPATH=src uv run --no-sync python -m marketplace_contracts.cli build --check
+PYTHONPATH=src uv run --no-sync python -m marketplace_contracts.cli trust-fixture --check
 PYTHONPATH=src uv run --no-sync python -m marketplace_contracts.cli docs
 ```
 
@@ -60,3 +61,9 @@ Markdown/HTML constructs, encoded equivalents, and disallowed controls while ret
 Unicode and punctuation. The post-build check independently constrains rendered developer-content
 tags and attributes and rejects active/raw content, review-only routes, and known private
 Command/root/branch/IPC markers.
+
+The checked-in private trust fixture also contains `registry/trust/v1/test/bundle-v1.json`. This
+is the deterministic four-part wrapper used by the Command remote-catalog test transport: it
+contains the exact envelope, detached signatures, generated catalog bytes, and matching
+revocation bytes as JSON strings. It is test material only; it is not a production signing key,
+public catalog, or supported installation endpoint.

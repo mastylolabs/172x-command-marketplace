@@ -45,8 +45,10 @@ The current coherent local release contains:
 4. one declarative Catppuccin Mocha Theme with explicit upstream/MIT attribution;
 5. one Clock Widget review-source package with truthful `host-bundled-source`/not-bundled state;
 6. Panel contracts and fixtures, but no Panel package or placement implementation;
-7. versioned MkDocs developer docs plus local/CI synchronization and link checks; and
-8. a source-controlled CI workflow that runs the same complete local gate without secrets.
+7. versioned MkDocs developer docs plus local/CI synchronization and link checks;
+8. a deterministic private trust-test bundle that packages the exact catalog, revocations,
+   envelope, and detached signature bytes for Command integration tests; and
+9. a source-controlled CI workflow that runs the same complete local gate without secrets.
 
 No host integration, package install/enable/apply/place runtime, service, account, database,
 payment, telemetry, provider configuration, public URL, or executable package path is included.
@@ -70,6 +72,10 @@ PYTHONPATH=src uv run --no-sync python -m marketplace_contracts.cli package pack
 The scaffold command also accepts `widget` and `panel`. Widget output is review source only and
 remains unavailable until that exact package is reviewed and compiled into a compatible Command
 build. Scaffolding does not add a package to a release, sign it, or publish it.
+
+The checked-in `registry/trust/v1/test/bundle-v1.json` is only a local/native integration fixture.
+It must not be presented as a production marketplace endpoint or used as a production signing-key
+workflow.
 
 Focused commands and stable failure behavior are documented in the
 [v1 validation reference](docs/contracts/v1/validation.md). A local pass is implementation evidence,

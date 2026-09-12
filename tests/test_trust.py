@@ -16,6 +16,7 @@ from marketplace_contracts.model import ContractError
 from marketplace_contracts.trust import (
     TEST_KEY_FIXTURE,
     TEST_KEY_RING,
+    TEST_BUNDLE_NAME,
     TEST_TRUST_OUTPUT,
     b64url_decode,
     canonical_json,
@@ -49,6 +50,12 @@ def test_checked_in_bundle_is_canonical_signed_and_schema_valid(repo_root: Path)
     envelope = verify_envelope(envelope_bytes, signatures_bytes, key_ring_bytes, now=NOW)
     schema = json.loads((repo_root / "schemas/v1/catalog-envelope.schema.json").read_text())
     Draft202012Validator(schema, format_checker=Draft202012Validator.FORMAT_CHECKER).validate(envelope)
+    bundle = json.loads((repo_root / TEST_TRUST_OUTPUT / TEST_BUNDLE_NAME).read_text())
+    assert set(bundle) == {"catalog", "envelope", "revocations", "signatures"}
+    assert bundle["envelope"].encode() == envelope_bytes
+    assert bundle["signatures"].encode() == signatures_bytes
+    assert bundle["catalog"].encode() == (repo_root / envelope["catalogUri"]).read_bytes()
+    assert bundle["revocations"].encode() == (repo_root / envelope["revocationsUri"]).read_bytes()
 
 
 def test_one_byte_envelope_mutation_fails_closed(repo_root: Path) -> None:
